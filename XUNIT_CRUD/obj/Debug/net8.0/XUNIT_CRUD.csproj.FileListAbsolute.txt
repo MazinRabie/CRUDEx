@@ -163,3 +163,4 @@ C:\Users\hp\source\repos\CRUDEx\XUNIT_CRUD\bin\Debug\net8.0\Repository.dll
 C:\Users\hp\source\repos\CRUDEx\XUNIT_CRUD\bin\Debug\net8.0\RepositoryContracts.dll
 C:\Users\hp\source\repos\CRUDEx\XUNIT_CRUD\bin\Debug\net8.0\RepositoryContracts.pdb
 C:\Users\hp\source\repos\CRUDEx\XUNIT_CRUD\bin\Debug\net8.0\Repository.pdb
+C:\Users\hp\source\repos\CRUDEx\XUNIT_CRUD\obj\Debug\net8.0\XUNIT_CRUD.sourcelink.json

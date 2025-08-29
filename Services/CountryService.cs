@@ -52,8 +52,8 @@ namespace Services
             var country = countryRequest.ToCountry();
             // await _db.Countries.AddAsync(country);
             // await _db.SaveChangesAsync();
-            await _countryRepository.AddCountry(country);
-            return country.ToCountryResponse();
+            var CountryAdded = await _countryRepository.AddCountry(country);
+            return CountryAdded.ToCountryResponse();
         }
 
         public async Task<List<CountryResponse>> GetAllCountries()

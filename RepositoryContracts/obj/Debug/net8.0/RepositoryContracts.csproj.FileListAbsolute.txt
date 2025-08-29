@@ -13,3 +13,4 @@ C:\Users\hp\source\repos\CRUDEx\RepositoryContracts\obj\Debug\net8.0\RepositoryC
 C:\Users\hp\source\repos\CRUDEx\RepositoryContracts\obj\Debug\net8.0\refint\RepositoryContracts.dll
 C:\Users\hp\source\repos\CRUDEx\RepositoryContracts\obj\Debug\net8.0\RepositoryContracts.pdb
 C:\Users\hp\source\repos\CRUDEx\RepositoryContracts\obj\Debug\net8.0\ref\RepositoryContracts.dll
+C:\Users\hp\source\repos\CRUDEx\RepositoryContracts\obj\Debug\net8.0\RepositoryContracts.sourcelink.json

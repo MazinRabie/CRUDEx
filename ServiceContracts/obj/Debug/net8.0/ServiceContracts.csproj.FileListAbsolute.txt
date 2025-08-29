@@ -13,3 +13,4 @@ C:\Users\hp\source\repos\CRUDEx\ServiceContracts\obj\Debug\net8.0\ServiceContrac
 C:\Users\hp\source\repos\CRUDEx\ServiceContracts\obj\Debug\net8.0\refint\ServiceContracts.dll
 C:\Users\hp\source\repos\CRUDEx\ServiceContracts\obj\Debug\net8.0\ServiceContracts.pdb
 C:\Users\hp\source\repos\CRUDEx\ServiceContracts\obj\Debug\net8.0\ref\ServiceContracts.dll
+C:\Users\hp\source\repos\CRUDEx\ServiceContracts\obj\Debug\net8.0\ServiceContracts.sourcelink.json
