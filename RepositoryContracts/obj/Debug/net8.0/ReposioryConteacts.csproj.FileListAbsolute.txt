@@ -1,0 +1,5 @@
+C:\Users\hp\source\repos\CRUDEx\RepositoryContracts\obj\Debug\net8.0\ReposioryConteacts.csproj.AssemblyReference.cache
+C:\Users\hp\source\repos\CRUDEx\RepositoryContracts\obj\Debug\net8.0\ReposioryConteacts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hp\source\repos\CRUDEx\RepositoryContracts\obj\Debug\net8.0\ReposioryConteacts.AssemblyInfoInputs.cache
+C:\Users\hp\source\repos\CRUDEx\RepositoryContracts\obj\Debug\net8.0\ReposioryConteacts.AssemblyInfo.cs
+C:\Users\hp\source\repos\CRUDEx\RepositoryContracts\obj\Debug\net8.0\ReposioryConteacts.csproj.CoreCompileInputs.cache

@@ -1,0 +1,17 @@
+C:\Users\hp\source\repos\CRUDEx\Repository\bin\Debug\net8.0\Repository.deps.json
+C:\Users\hp\source\repos\CRUDEx\Repository\bin\Debug\net8.0\Repository.dll
+C:\Users\hp\source\repos\CRUDEx\Repository\bin\Debug\net8.0\Repository.pdb
+C:\Users\hp\source\repos\CRUDEx\Repository\bin\Debug\net8.0\Entities.dll
+C:\Users\hp\source\repos\CRUDEx\Repository\bin\Debug\net8.0\RepositoryContracts.dll
+C:\Users\hp\source\repos\CRUDEx\Repository\bin\Debug\net8.0\RepositoryContracts.pdb
+C:\Users\hp\source\repos\CRUDEx\Repository\bin\Debug\net8.0\Entities.pdb
+C:\Users\hp\source\repos\CRUDEx\Repository\obj\Debug\net8.0\Repository.csproj.AssemblyReference.cache
+C:\Users\hp\source\repos\CRUDEx\Repository\obj\Debug\net8.0\Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hp\source\repos\CRUDEx\Repository\obj\Debug\net8.0\Repository.AssemblyInfoInputs.cache
+C:\Users\hp\source\repos\CRUDEx\Repository\obj\Debug\net8.0\Repository.AssemblyInfo.cs
+C:\Users\hp\source\repos\CRUDEx\Repository\obj\Debug\net8.0\Repository.csproj.CoreCompileInputs.cache
+C:\Users\hp\source\repos\CRUDEx\Repository\obj\Debug\net8.0\Repository.csproj.Up2Date
+C:\Users\hp\source\repos\CRUDEx\Repository\obj\Debug\net8.0\Repository.dll
+C:\Users\hp\source\repos\CRUDEx\Repository\obj\Debug\net8.0\refint\Repository.dll
+C:\Users\hp\source\repos\CRUDEx\Repository\obj\Debug\net8.0\Repository.pdb
+C:\Users\hp\source\repos\CRUDEx\Repository\obj\Debug\net8.0\ref\Repository.dll

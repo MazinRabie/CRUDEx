@@ -1,0 +1,66 @@
+﻿@model List<PersonResponse>
+
+<div class="card p-3 mb-3 shadow-sm">
+    <form asp-action="Search" asp-controller="Person" method="post" class="row g-2 align-items-center">
+        <!-- Dropdown -->
+        <div class="col-md-3">
+            <select class="form-select" name="searchBy">
+                <option value="" disabled selected>-- Search By --</option>
+                <option value="Name" >Name</option>
+                <option value="Email" >Email</option>
+                <option value="Country" >Country</option>
+                <option value="Address" >Address</option>
+                <option value="Gender" >Gender</option>
+            </select>
+        </div>
+
+        <!-- Input -->
+        <div class="col-md-4">
+            <input type="text" name="searchKey" class="form-control"
+                   placeholder="Enter search term"  />
+        </div>
+
+        <!-- Search Button -->
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-primary w-100">Search</button>
+        </div>
+
+        
+        <div class="col-md-2">
+            <a asp-action="CreatePersonGet" class="btn btn-success w-100">Add Person</a>
+        </div>
+    </form>
+</div>
+
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+@*             <th><a href="@Url.Action("SortPersons","Person",new {sortBy="Name"})">Name</a></th> *@
+            <th> <a asp-controller="Person" asp-action="SortPersons" asp-route-sortBy="Name">Name</a></th>
+            <th> <a asp-controller="Person" asp-action="SortPersons" asp-route-sortBy="Email">Email</a></th>
+            <th> <a href="/">Date of birth</a></th>
+            <th> <a asp-controller="Person" asp-action="SortPersons" asp-route-sortBy="age">Age</a></th>
+            <th> <a asp-controller="Person" asp-action="SortPersons" asp-route-sortBy="Gender">Gender</a></th>
+            <th> <a asp-controller="Person" asp-action="SortPersons" asp-route-sortBy="Country">Country</a></th>
+            <th>options</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var person in Model)
+        {
+            
+        <tr>
+                <td>@person.Name</td>
+                <td>@person.Email</td>
+                 @* <td>@person.DateOfBirth.ToShortDateString()</td> *@
+                @* <td>@person.DateOfBirth.ToString("yyyy-MMM-dd")</td> *@
+                <td>@person.DateOfBirth.ToString("MMM dd - yyyy")</td>
+                <td>@person.age</td>
+                <td>@person.Gender</td>
+                <td>@person.CountryName</td>
+                <td><a asp-action="DeletePerson" asp-route-id="@person.Id" onclick="return confirm('Are you sure you want to delete this person?');" class="btn btn-danger">delete</a> <span>@($"   ")</span><a asp-action="UpdatePersonGet" asp-route-id="@person.Id" class="btn btn-primary">edit</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
