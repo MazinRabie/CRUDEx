@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\hp\\source\\repos\\CRUDEx\\RepositoryContracts\\RepositoryContracts.csproj": {}
+    "C:\\Users\\hp\\source\\repos\\CRUDEx\\RepositoryContracts\\RepositoryContracts.csproj": {}
   },
   "projects": {
-    "c:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj": {
+    "C:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "c:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj",
+        "projectPath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\obj\\",
+        "outputPath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -83,14 +83,14 @@
         }
       }
     },
-    "c:\\Users\\hp\\source\\repos\\CRUDEx\\RepositoryContracts\\RepositoryContracts.csproj": {
+    "C:\\Users\\hp\\source\\repos\\CRUDEx\\RepositoryContracts\\RepositoryContracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\hp\\source\\repos\\CRUDEx\\RepositoryContracts\\RepositoryContracts.csproj",
+        "projectUniqueName": "C:\\Users\\hp\\source\\repos\\CRUDEx\\RepositoryContracts\\RepositoryContracts.csproj",
         "projectName": "RepositoryContracts",
-        "projectPath": "c:\\Users\\hp\\source\\repos\\CRUDEx\\RepositoryContracts\\RepositoryContracts.csproj",
+        "projectPath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\RepositoryContracts\\RepositoryContracts.csproj",
         "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\hp\\source\\repos\\CRUDEx\\RepositoryContracts\\obj\\",
+        "outputPath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\RepositoryContracts\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -108,8 +108,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "c:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj": {
-                "projectPath": "c:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj"
+              "C:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj"
               }
             }
           }

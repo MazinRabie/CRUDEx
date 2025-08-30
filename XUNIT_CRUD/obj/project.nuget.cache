@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jgzov7ZwFes=",
+  "dgSpecHash": "rnLv/QQY96M=",
   "success": true,
-  "projectFilePath": "c:\\Users\\hp\\source\\repos\\CRUDEx\\XUNIT_CRUD\\XUNIT_CRUD.csproj",
+  "projectFilePath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\XUNIT_CRUD\\XUNIT_CRUD.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hp\\.nuget\\packages\\autofixture\\5.0.0-preview0012\\autofixture.5.0.0-preview0012.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",

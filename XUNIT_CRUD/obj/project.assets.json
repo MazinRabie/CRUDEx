@@ -10136,11 +10136,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\hp\\source\\repos\\CRUDEx\\XUNIT_CRUD\\XUNIT_CRUD.csproj",
+      "projectUniqueName": "C:\\Users\\hp\\source\\repos\\CRUDEx\\XUNIT_CRUD\\XUNIT_CRUD.csproj",
       "projectName": "XUNIT_CRUD",
-      "projectPath": "c:\\Users\\hp\\source\\repos\\CRUDEx\\XUNIT_CRUD\\XUNIT_CRUD.csproj",
+      "projectPath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\XUNIT_CRUD\\XUNIT_CRUD.csproj",
       "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\hp\\source\\repos\\CRUDEx\\XUNIT_CRUD\\obj\\",
+      "outputPath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\XUNIT_CRUD\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -10158,14 +10158,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "c:\\Users\\hp\\source\\repos\\CRUDEx\\CRUDEx\\CRUDEx.csproj": {
-              "projectPath": "c:\\Users\\hp\\source\\repos\\CRUDEx\\CRUDEx\\CRUDEx.csproj"
+            "C:\\Users\\hp\\source\\repos\\CRUDEx\\CRUDEx\\CRUDEx.csproj": {
+              "projectPath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\CRUDEx\\CRUDEx.csproj"
             },
-            "c:\\Users\\hp\\source\\repos\\CRUDEx\\RepositoryContracts\\RepositoryContracts.csproj": {
-              "projectPath": "c:\\Users\\hp\\source\\repos\\CRUDEx\\RepositoryContracts\\RepositoryContracts.csproj"
+            "C:\\Users\\hp\\source\\repos\\CRUDEx\\RepositoryContracts\\RepositoryContracts.csproj": {
+              "projectPath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\RepositoryContracts\\RepositoryContracts.csproj"
             },
-            "c:\\Users\\hp\\source\\repos\\CRUDEx\\Repository\\Repository.csproj": {
-              "projectPath": "c:\\Users\\hp\\source\\repos\\CRUDEx\\Repository\\Repository.csproj"
+            "C:\\Users\\hp\\source\\repos\\CRUDEx\\Repository\\Repository.csproj": {
+              "projectPath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\Repository\\Repository.csproj"
             }
           }
         }

@@ -2721,11 +2721,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\hp\\source\\repos\\CRUDEx\\Services\\Services.csproj",
+      "projectUniqueName": "C:\\Users\\hp\\source\\repos\\CRUDEx\\Services\\Services.csproj",
       "projectName": "Services",
-      "projectPath": "c:\\Users\\hp\\source\\repos\\CRUDEx\\Services\\Services.csproj",
+      "projectPath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\Services\\Services.csproj",
       "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\hp\\source\\repos\\CRUDEx\\Services\\obj\\",
+      "outputPath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\Services\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2743,14 +2743,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "c:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj": {
-              "projectPath": "c:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj"
+            "C:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj"
             },
-            "c:\\Users\\hp\\source\\repos\\CRUDEx\\RepositoryContracts\\RepositoryContracts.csproj": {
-              "projectPath": "c:\\Users\\hp\\source\\repos\\CRUDEx\\RepositoryContracts\\RepositoryContracts.csproj"
+            "C:\\Users\\hp\\source\\repos\\CRUDEx\\RepositoryContracts\\RepositoryContracts.csproj": {
+              "projectPath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\RepositoryContracts\\RepositoryContracts.csproj"
             },
-            "c:\\Users\\hp\\source\\repos\\CRUDEx\\ServiceContracts\\ServiceContracts.csproj": {
-              "projectPath": "c:\\Users\\hp\\source\\repos\\CRUDEx\\ServiceContracts\\ServiceContracts.csproj"
+            "C:\\Users\\hp\\source\\repos\\CRUDEx\\ServiceContracts\\ServiceContracts.csproj": {
+              "projectPath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\ServiceContracts\\ServiceContracts.csproj"
             }
           }
         }
