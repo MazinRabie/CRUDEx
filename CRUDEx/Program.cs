@@ -5,11 +5,13 @@ using Repository;
 using RepositoryContracts;
 using ServiceContracts;
 using Services;
+using System.Runtime.CompilerServices;
 using System.Text.Json.Serialization;
 
+// [assembly: InternalsVisibleTo(@"XUNIT_CRUD")]
 namespace CRUDEx
 {
-    public class Program
+    public partial class Program
     {
         public static void Main(string[] args)
         {
