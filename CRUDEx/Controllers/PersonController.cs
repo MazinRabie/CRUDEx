@@ -1,7 +1,10 @@
 ﻿using System.Threading.Tasks;
 using CRUDEx.Filters.ActionFilters;
+using CRUDEx.Filters.AuthorizationFilters;
+using CRUDEx.Filters.ExceptionFilters;
 using CRUDEx.Filters.ResourceFilters;
 using CRUDEx.Filters.ResultFilters;
+using CRUDEx.Filters.SkipFilter;
 using CRUDEx.SomeInitialData;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -12,7 +15,8 @@ using ServiceContracts.Enums;
 namespace CRUDEx.Controllers
 {
     [TypeFilter(typeof(AddResponseHeaderActionFilter), Arguments = new object[] { "Controller_Header", "Provided via Paramterized Filter", 1 })]
-
+    [TypeFilter(typeof(HandleExceptionFilter))]
+    [TypeFilter(typeof(PersonAlwaysRunResultFilter))]
     public class PersonController : Controller
 
     {
@@ -33,6 +37,7 @@ namespace CRUDEx.Controllers
         [TypeFilter(typeof(PersonListActionFilter), Order = 4)]
         [TypeFilter(typeof(AddResponseHeaderActionFilter), Arguments = new object[] { "CustomHeader", "Provided via Paramterized Filter", 2 })]
         [TypeFilter(typeof(PersonListResultFilter), Order = 3)]
+        // [SkipFilter]
         public async Task<IActionResult> Index()
         {
 
@@ -76,7 +81,7 @@ namespace CRUDEx.Controllers
         }
 
         [HttpGet]
-
+        [TypeFilter(typeof(AddTokenAuthorizationToCookiesFilter))]
         public async Task<IActionResult> UpdatePersonGet(Guid id)
         {
             var person = (await _personService.GetPersonByID(id))?.ToPersonUpdateRequest();
@@ -92,8 +97,8 @@ namespace CRUDEx.Controllers
         }
 
         [HttpPost]
-        [TypeFilter(typeof(CreateAndEditPersonActionFilter), Arguments = new object[] { "Update" })]
-
+        // [TypeFilter(typeof(CreateAndEditPersonActionFilter), Arguments = new object[] { "Update" })]
+        [TypeFilter(typeof(TokenAuthorizationFilter))]
         public async Task<IActionResult> UpdatePersonPost(PersonUpdateRequest personReq)
         {
             var person = await _personService.UpdatePerson(personReq);
@@ -110,7 +115,8 @@ namespace CRUDEx.Controllers
         }
 
         [HttpGet]
-        [TypeFilter(typeof(FeatureDisableResourceFilter), Arguments = new object[] { true })]
+        // [TypeFilter(typeof(FeatureDisableResourceFilter), Arguments = new object[] { true })]
+        // [TypeFilter(typeof(ThrowExceptionFilter))]
         public async Task<IActionResult> CreatePersonGet()
         {
             //if (personReq == null) personReq = new AddPersonRequest();

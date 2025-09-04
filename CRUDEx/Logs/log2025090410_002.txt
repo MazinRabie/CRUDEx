@@ -1,3 +1,6 @@
 2025-09-04 10:12:08.532 +03:00 [INF] Application started. Press Ctrl+C to shut down.
 2025-09-04 10:12:08.548 +03:00 [INF] Hosting environment: Development
 2025-09-04 10:12:08.560 +03:00 [INF] Content root path: C:\Users\hp\source\repos\CRUDEx\CRUDEx
+2025-09-04 10:42:20.720 +03:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-04 10:42:20.986 +03:00 [WRN] The WebRootPath was not found: C:\Users\hp\source\repos\CRUDEx\CRUDEx\wwwroot. Static files may be unavailable.
+2025-09-04 10:42:21.026 +03:00 [INF] Now listening on: http://localhost:5095

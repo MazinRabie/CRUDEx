@@ -20,7 +20,8 @@ namespace CRUDEx.Filters.ResourceFilters
         public async Task OnResourceExecutionAsync(ResourceExecutingContext context, ResourceExecutionDelegate next)
         {
             if (_disabled)
-                context.Result = new NotFoundResult();
+                // context.Result = new NotFoundResult();
+                context.Result = new StatusCodeResult(501);
             else
             {
                 await next();
