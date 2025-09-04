@@ -14,6 +14,8 @@ using Entities;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.AspNetCore.Mvc;
 using ServiceContracts.DTOs.PersonDtos;
+using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace XUNIT_CRUD
 {
@@ -21,6 +23,12 @@ namespace XUNIT_CRUD
     {
         private readonly IPersonRepository _personRepository;
         private readonly ICountryRepository _countryRepository;
+        private readonly ILogger<PersonService> _logger;
+        private readonly Mock<ILogger<PersonService>> _loggerMock;
+        private readonly ILogger<PersonController> _loggerPersonController;
+        private readonly Mock<ILogger<PersonController>> _loggerPersonControllerMock;
+        private readonly IDiagnosticContext _diagnosticsContext;
+        private readonly Mock<IDiagnosticContext> _diagnosticsContextMock;
 
         private readonly Mock<IPersonRepository> _mockPersonRepository;
         private readonly Mock<ICountryRepository> _mockCountryRepository;
@@ -36,10 +44,17 @@ namespace XUNIT_CRUD
             _mockPersonRepository = new Mock<IPersonRepository>();
             _personRepository = _mockPersonRepository.Object;
             _countryRepository = _mockCountryRepository.Object;
+            _loggerMock = new Mock<ILogger<PersonService>>();
+            _logger = _loggerMock.Object;
+            _loggerPersonControllerMock = new Mock<ILogger<PersonController>>();
+            _loggerPersonController = _loggerPersonControllerMock.Object;
+            _diagnosticsContextMock = new Mock<IDiagnosticContext>();
+            _diagnosticsContext = _diagnosticsContextMock.Object;
+
             _fixture = new Fixture();
-            _personService = new PersonService(_personRepository);
+            _personService = new PersonService(_personRepository, _logger, _diagnosticsContext);
             _CountryService = new CountryService(_countryRepository);
-            _personController = new PersonController(_personService, _CountryService, sortFlags);
+            _personController = new PersonController(_personService, _CountryService, sortFlags, _loggerPersonController);
 
         }
         [Fact]

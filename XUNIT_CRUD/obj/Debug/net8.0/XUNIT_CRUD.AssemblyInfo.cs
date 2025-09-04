@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("XUNIT_CRUD")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+37c4e9792bbfdd44bcfba51631e889ef943cc199")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2f5d44596efe7b90611615ab6e26769b3d795c78")]
 [assembly: System.Reflection.AssemblyProductAttribute("XUNIT_CRUD")]
 [assembly: System.Reflection.AssemblyTitleAttribute("XUNIT_CRUD")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

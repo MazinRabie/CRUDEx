@@ -14,12 +14,18 @@ using FluentAssertions;
 using RepositoryContracts;
 using Repository;
 using System.Linq.Expressions;
+using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace XUNIT_CRUD
 {
     public class PersonServiceTest
     {
         private readonly ITestOutputHelper _testOutputHelper;
+        private readonly ILogger<PersonService> _logger;
+        private readonly Mock<ILogger<PersonService>> _loggerMock;
+        private readonly IDiagnosticContext _diagnosticsContext;
+        private readonly Mock<IDiagnosticContext> _diagnosticsContextMock;
         private readonly Mock<IPersonRepository> _mockPersonRepository;
         private readonly IFixture _fixture;
         private readonly IPersonRepository _personRepository;
@@ -36,10 +42,14 @@ namespace XUNIT_CRUD
             // _personRepository = new PersonRepository(MockDbContext.Object);
             // _personsService = new PersonService(_personRepository);
             #endregion
+            _loggerMock = new Mock<ILogger<PersonService>>();
+            _logger = _loggerMock.Object;
+            _diagnosticsContextMock = new Mock<IDiagnosticContext>();
+            _diagnosticsContext = _diagnosticsContextMock.Object;
             #region  mocking Repository
             _mockPersonRepository = new Mock<IPersonRepository>();
             _personRepository = _mockPersonRepository.Object;
-            _personsService = new PersonService(_personRepository);
+            _personsService = new PersonService(_personRepository, _logger, _diagnosticsContext);
             #endregion
             _testOutputHelper = testOutputHelper;
         }

@@ -1,8 +1,8 @@
 {
-  "CRUDEx, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "c:\\Users\\hp\\source\\repos\\CRUDEx\\CRUDEx",
-  "Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "c:\\Users\\hp\\source\\repos\\CRUDEx\\Entities",
-  "Repository, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "c:\\Users\\hp\\source\\repos\\CRUDEx\\Repository",
-  "RepositoryContracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "c:\\Users\\hp\\source\\repos\\CRUDEx\\RepositoryContracts",
-  "ServiceContracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "c:\\Users\\hp\\source\\repos\\CRUDEx\\ServiceContracts",
-  "Services, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "c:\\Users\\hp\\source\\repos\\CRUDEx\\Services"
+  "CRUDEx, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\hp\\source\\repos\\CRUDEx\\CRUDEx",
+  "Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\hp\\source\\repos\\CRUDEx\\Entities",
+  "Repository, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\hp\\source\\repos\\CRUDEx\\Repository",
+  "RepositoryContracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\hp\\source\\repos\\CRUDEx\\RepositoryContracts",
+  "ServiceContracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\hp\\source\\repos\\CRUDEx\\ServiceContracts",
+  "Services, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\hp\\source\\repos\\CRUDEx\\Services"
 }

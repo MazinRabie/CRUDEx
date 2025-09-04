@@ -1,4 +1,5 @@
 using CRUDEx.Filters.ActionFilters;
+using CRUDEx.ServicesExtensions;
 using CRUDEx.SomeInitialData;
 using Entities;
 using Microsoft.AspNetCore.HttpLogging;
@@ -19,36 +20,7 @@ namespace CRUDEx
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            //builder.Services.Configure<>();
-            builder.Services.AddControllersWithViews(op =>
-            {
-                var logger = builder.Services.BuildServiceProvider().GetRequiredService<ILogger<AddResponseHeaderActionFilter>>();
-                op.Filters.Add(new AddResponseHeaderActionFilter(logger, "GlobalHeader", "via GlobalScope Filter", 3));
-            });
-            builder.Services.AddScoped<ICountriesService, CountryService>();
-            builder.Services.AddScoped<IPersonService, PersonService>();
-            builder.Services.AddScoped<ICountryRepository, CountryRepository>();
-            builder.Services.AddScoped<IPersonRepository, PersonRepository>();
-            builder.Services.AddSingleton<SortFlags>();
-            builder.Services.AddControllers()
-    .AddJsonOptions(options =>
-    {
-        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
-    });
-            builder.Services.AddDbContext<MyDbContext>(options =>
-            {
-                options.UseSqlServer(builder.Configuration["ConnectionStrings:Default"]);
-            });
-            builder.Services.AddHttpLogging(logging =>
-            {
-                logging.LoggingFields = HttpLoggingFields.RequestPropertiesAndHeaders | HttpLoggingFields.ResponsePropertiesAndHeaders;
-            });
-
-            builder.Host.UseSerilog((HostBuilderContext context, IServiceProvider services, LoggerConfiguration configuration) =>
-            {
-                configuration.ReadFrom.Configuration(context.Configuration).ReadFrom.Services(services);
-
-            });
+            builder.Services.ConfigureServices(builder);
             var app = builder.Build();
             app.UseSerilogRequestLogging();
             // app.Logger.LogDebug("this is for debug");
