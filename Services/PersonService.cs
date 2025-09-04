@@ -1,7 +1,10 @@
 ﻿using System.Linq.Expressions;
 using Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
+using Microsoft.Extensions.Logging;
 using RepositoryContracts;
+using Serilog;
 using ServiceContracts;
 using ServiceContracts.DTOs.PersonDtos;
 using Services.Helpers;
@@ -12,6 +15,9 @@ namespace Services
     {
         // private readonly ICountriesService _countriesService;
         // private readonly MyDbContext _db;
+        private readonly ILogger<PersonService> _logger;
+        private readonly IDiagnosticContext _diagnosticsContext;
+
         private readonly IPersonRepository _personRepository;
         private readonly Dictionary<string, Func<string, Expression<Func<Person, bool>>>> searchSelector =
                 new()
@@ -31,10 +37,12 @@ namespace Services
         //    MockData();
         //}
         // public PersonService(IPersonRepository personRepository, MyDbContext myDbContext)
-        public PersonService(IPersonRepository personRepository)
+        public PersonService(IPersonRepository personRepository, ILogger<PersonService> logger, IDiagnosticContext diagnosticsContext)
         {
             // _db = myDbContext;
             _personRepository = personRepository;
+            _logger = logger;
+            _diagnosticsContext = diagnosticsContext;
             // _countriesService = countriesService;
 
         }
@@ -94,8 +102,10 @@ namespace Services
 
         public async Task<List<PersonResponse>> GetAllPeople()
         {
+            _logger.LogInformation("getting all people ");
             // var persons = await _db.Persons.ToListAsync();
             var persons = await _personRepository.GetAllPersons();
+            _diagnosticsContext.Set("Persons", persons);
             return persons?.Select(x => x.ToPersonResponse()).ToList()!;
         }
         private async Task<Person?> GetPerson(Guid? id)

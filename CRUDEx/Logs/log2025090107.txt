@@ -1,0 +1,76 @@
+2025-09-01 07:51:04.963 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/ - null null
+2025-09-01 07:51:05.031 +03:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8
+Connection: keep-alive
+Host: localhost:5095
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+Sec-GPC: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-User: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2025-09-01 07:51:05.208 +03:00 [INF] Executing endpoint 'CRUDEx.Controllers.PersonController.Index (CRUDEx)'
+2025-09-01 07:51:05.233 +03:00 [INF] Route matched with {action = "Index", controller = "Person"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller CRUDEx.Controllers.PersonController (CRUDEx).
+2025-09-01 07:51:05.267 +03:00 [INF] hitting the index action
+2025-09-01 07:51:05.270 +03:00 [INF] getting all people 
+2025-09-01 07:51:05.274 +03:00 [INF] getting persons from repo
+2025-09-01 07:51:06.273 +03:00 [INF] Executed DbCommand (766ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Address], [p].[CountryId], [p].[DateOfBirth], [p].[Email], [p].[Gender], [p].[Name], [p].[RecieveNewsLetters], [c].[guid], [c].[CountryName]
+FROM [Persons] AS [p]
+INNER JOIN [Countries] AS [c] ON [p].[CountryId] = [c].[guid]
+2025-09-01 07:51:06.416 +03:00 [INF] Executing ViewResult, running view Index.
+2025-09-01 07:51:06.551 +03:00 [INF] Executed ViewResult - view Index executed in 138.5981ms.
+2025-09-01 07:51:06.615 +03:00 [INF] Executed action CRUDEx.Controllers.PersonController.Index (CRUDEx) in 1376.4579ms
+2025-09-01 07:51:06.617 +03:00 [INF] Executed endpoint 'CRUDEx.Controllers.PersonController.Index (CRUDEx)'
+2025-09-01 07:51:06.624 +03:00 [INF] Response:
+StatusCode: 200
+Content-Type: text/html; charset=utf-8
+Date: Mon, 01 Sep 2025 04:51:06 GMT
+Server: Kestrel
+Cache-Control: [Redacted]
+Pragma: [Redacted]
+Set-Cookie: [Redacted]
+Transfer-Encoding: chunked
+X-Frame-Options: [Redacted]
+2025-09-01 07:51:06.631 +03:00 [INF] HTTP GET / responded 200 in 1604.9566 ms
+2025-09-01 07:51:06.644 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/ - 200 null text/html; charset=utf-8 1686.2962ms
+2025-09-01 07:51:10.252 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-01 07:51:10.277 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 25.3973ms
+2025-09-01 07:51:11.615 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/favicon.ico - null null
+2025-09-01 07:51:11.626 +03:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Connection: keep-alive
+Host: localhost:5095
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cookie: [Redacted]
+Referer: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+Sec-GPC: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2025-09-01 07:51:11.631 +03:00 [INF] Response:
+StatusCode: 404
+2025-09-01 07:51:11.634 +03:00 [INF] HTTP GET /favicon.ico responded 404 in 8.0078 ms
+2025-09-01 07:51:11.638 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/favicon.ico - 404 0 null 22.9475ms
+2025-09-01 07:51:11.645 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5095/favicon.ico, Response status code: 404

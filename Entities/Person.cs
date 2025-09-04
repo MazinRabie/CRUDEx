@@ -23,6 +23,12 @@ namespace Entities
         public bool RecieveNewsLetters { get; set; }
         public Country Country { get; set; }
 
+        public override string ToString()
+        {
+            var props = GetType().GetProperties();
+            return string.Join(", ", props.Select(p => $"{p.Name}={p.GetValue(this)}"));
+        }
+
 
     }
     public enum Gender

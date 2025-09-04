@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using Entities;
 using Fizzler.Systems.HtmlAgilityPack;
 using FluentAssertions;
-
 // using FluentAssertions;
 using FluentAssertions.Web;
 using HtmlAgilityPack;
@@ -35,7 +34,7 @@ namespace XUNIT_CRUD
             HtmlDocument html = new HtmlDocument();
             html.LoadHtml(content);
             var node = html.DocumentNode;
-            var table =node.QuerySelectorAll(".zoz");
+            var table = node.QuerySelectorAll(".zoz");
             Assert.NotNull(table);
             Assert.NotNull(content);
 

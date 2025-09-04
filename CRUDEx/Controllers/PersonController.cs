@@ -1,4 +1,7 @@
 ﻿using System.Threading.Tasks;
+using CRUDEx.Filters.ActionFilters;
+using CRUDEx.Filters.ResourceFilters;
+using CRUDEx.Filters.ResultFilters;
 using CRUDEx.SomeInitialData;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -8,27 +11,37 @@ using ServiceContracts.Enums;
 
 namespace CRUDEx.Controllers
 {
+    [TypeFilter(typeof(AddResponseHeaderActionFilter), Arguments = new object[] { "Controller_Header", "Provided via Paramterized Filter", 1 })]
+
     public class PersonController : Controller
 
     {
         private readonly SortFlags _sortFlags;
         private readonly IPersonService _personService;
         private readonly ICountriesService _countriesService;
+        private readonly ILogger<PersonController> _logger;
 
-        public PersonController(IPersonService personService, ICountriesService countriesService, SortFlags sortFlags)
+        public PersonController(IPersonService personService, ICountriesService countriesService, SortFlags sortFlags, ILogger<PersonController> logger)
         {
             _personService = personService;
             _countriesService = countriesService;
             _sortFlags = sortFlags;
+            _logger = logger;
         }
         [Route("/")]
         [Route("People/index")]
+        [TypeFilter(typeof(PersonListActionFilter), Order = 4)]
+        [TypeFilter(typeof(AddResponseHeaderActionFilter), Arguments = new object[] { "CustomHeader", "Provided via Paramterized Filter", 2 })]
+        [TypeFilter(typeof(PersonListResultFilter), Order = 3)]
         public async Task<IActionResult> Index()
         {
+
+            _logger.LogInformation("hitting the index action");
             var people = await _personService.GetAllPeople();
             return View(model: people);
         }
         [Route("/SortPersons")]
+        [TypeFilter(typeof(SortPersonActionFilter))]
         public async Task<IActionResult> SortPersons(string sortBy)
         {
             SortingOrderEnum sortOrder;
@@ -48,6 +61,7 @@ namespace CRUDEx.Controllers
 
             var persons = await _personService.GetAllPeople();
             var SortedModel = _personService.GetSortedPersons(persons, sortBy, sortOrder);
+            _logger.LogInformation($"sorting people with {sortBy}");
             return View(model: SortedModel, viewName: "index");
 
 
@@ -74,15 +88,15 @@ namespace CRUDEx.Controllers
                 "CountryName",  // for dropdown text
                 person?.CountryId // preselect value
             );
-
             return View("UpdatePerson", person);
         }
 
         [HttpPost]
+        [TypeFilter(typeof(CreateAndEditPersonActionFilter), Arguments = new object[] { "Update" })]
 
-        public async Task<IActionResult> UpdatePersonPost(PersonUpdateRequest personUpdate)
+        public async Task<IActionResult> UpdatePersonPost(PersonUpdateRequest personReq)
         {
-            var person = await _personService.UpdatePerson(personUpdate);
+            var person = await _personService.UpdatePerson(personReq);
             return RedirectToAction("index");
 
         }
@@ -96,7 +110,7 @@ namespace CRUDEx.Controllers
         }
 
         [HttpGet]
-
+        [TypeFilter(typeof(FeatureDisableResourceFilter), Arguments = new object[] { true })]
         public async Task<IActionResult> CreatePersonGet()
         {
             //if (personReq == null) personReq = new AddPersonRequest();
@@ -105,9 +119,10 @@ namespace CRUDEx.Controllers
             return View("CreatePersonView", new AddPersonRequest());
         }
         [HttpPost]
-
+        [TypeFilter(typeof(CreateAndEditPersonActionFilter), Arguments = new object[] { "Create" })]
         public async Task<IActionResult> CreatePersonPost(AddPersonRequest personReq)
         {
+
             await _personService.AddPerson(personReq);
             return RedirectToAction("index");
 

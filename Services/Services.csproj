@@ -12,4 +12,8 @@
     <ProjectReference Include="..\RepositoryContracts\RepositoryContracts.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Serilog.Extensions.Hosting" Version="8.0.0" />
+  </ItemGroup>
+
 </Project>

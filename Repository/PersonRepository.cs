@@ -5,15 +5,19 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using RepositoryContracts;
 namespace Repository
 {
     public class PersonRepository : IPersonRepository
     {
         private readonly MyDbContext db;
-        public PersonRepository(MyDbContext db)
+        private readonly ILogger<PersonRepository> _logger;
+
+        public PersonRepository(MyDbContext db, ILogger<PersonRepository> logger)
         {
             this.db = db;
+            _logger = logger;
         }
 
         public async Task<Person?> AddPerson(Person person)
@@ -32,7 +36,9 @@ namespace Repository
 
         public async Task<List<Person?>> GetAllPersons()
         {
+            _logger.LogInformation("getting persons from repo");
             return await db.Persons.Include(x => x.Country).ToListAsync();
+
 
         }
 
