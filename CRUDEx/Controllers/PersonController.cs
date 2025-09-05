@@ -6,6 +6,7 @@ using CRUDEx.Filters.ResourceFilters;
 using CRUDEx.Filters.ResultFilters;
 using CRUDEx.Filters.SkipFilter;
 using CRUDEx.SomeInitialData;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ServiceContracts;
