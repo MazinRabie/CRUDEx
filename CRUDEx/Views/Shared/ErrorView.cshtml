@@ -1,0 +1,40 @@
+
+@{
+    Layout = null; // remove if you want to use _Layout
+    ViewData["Title"] = "Error";
+    var errorMsg =ViewBag.ErrorMsg;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Error</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            color: #333;
+        }
+        .error-container {
+            display: inline-block;
+        }
+        .error-img {
+            width: 500px;
+            margin-bottom: 20px;
+        }
+        .error-text {
+            font-size: 1.5rem;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <img src="~/images/Error.jpg" alt="Error" class="error-img"  />
+        <div class="error-text">Something went wrong. Please try again later.</div>
+        <div class="error-text">@errorMsg</div>
+    </div>
+</body>
+</html>

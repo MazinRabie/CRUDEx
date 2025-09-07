@@ -27,7 +27,12 @@ namespace CRUDEx.ServicesExtensions
                 op.Filters.Add(new AddResponseHeaderActionFilter(logger, "GlobalHeader", "via GlobalScope Filter", 3));
             });
             services.AddScoped<ICountriesService, CountryService>();
-            services.AddScoped<IPersonService, PersonService>();
+            services.AddScoped<IPersonAdderService, PersonAdderService>();
+            services.AddScoped<IPersonGetterService, PersonGetterServiceModified_OCP>();
+            services.AddScoped<PersonGetterService, PersonGetterService>();
+            services.AddScoped<IPersonUpdaterService, PersonUpdaterService>();
+            services.AddScoped<IPersonDeleterService, PersonDeleterService>();
+            services.AddScoped<IPersonSorterService, PersonSorterService>();
             services.AddScoped<ICountryRepository, CountryRepository>();
             services.AddScoped<IPersonRepository, PersonRepository>();
             services.AddSingleton<SortFlags>();

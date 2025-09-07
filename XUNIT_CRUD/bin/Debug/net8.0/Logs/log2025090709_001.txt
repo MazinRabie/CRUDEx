@@ -1,0 +1,86 @@
+2025-09-07 09:31:02.549 +03:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-07 09:31:03.029 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost/People/index - null null
+2025-09-07 09:31:03.061 +03:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /People/index
+Host: localhost
+2025-09-07 09:31:03.164 +03:00 [INF] Executing endpoint 'CRUDEx.Controllers.PersonController.Index (CRUDEx)'
+2025-09-07 09:31:03.208 +03:00 [INF] Route matched with {action = "Index", controller = "Person"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller CRUDEx.Controllers.PersonController (CRUDEx).
+2025-09-07 09:31:03.614 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync  - before 
+2025-09-07 09:31:03.615 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync  - before 
+2025-09-07 09:31:03.615 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync  - before 
+2025-09-07 09:31:03.616 +03:00 [INF] this is from action filter executing (before )
+2025-09-07 09:31:03.616 +03:00 [INF] Code red : this is from add response header filter going to the personList filter
+2025-09-07 09:31:03.617 +03:00 [INF] hitting the index action
+2025-09-07 09:31:03.620 +03:00 [INF] getting all people 
+2025-09-07 09:31:03.622 +03:00 [INF] getting persons from repo
+2025-09-07 09:31:07.071 +03:00 [INF] this is from action filter executed (after)
+2025-09-07 09:31:07.071 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync - after
+2025-09-07 09:31:07.072 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync - after
+2025-09-07 09:31:07.072 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync - after
+2025-09-07 09:31:07.074 +03:00 [INF] false filter wasn't  skipped 
+2025-09-07 09:31:07.075 +03:00 [INF] code blue PersonListResultFilter -before
+2025-09-07 09:31:07.133 +03:00 [INF] Executing ViewResult, running view Index.
+2025-09-07 09:31:07.280 +03:00 [INF] Executed ViewResult - view Index executed in 151.3429ms.
+2025-09-07 09:31:07.281 +03:00 [INF] code blue PersonListResultFilter -after
+2025-09-07 09:31:07.282 +03:00 [INF] Executed action CRUDEx.Controllers.PersonController.Index (CRUDEx) in 4073.4324ms
+2025-09-07 09:31:07.286 +03:00 [INF] Executed endpoint 'CRUDEx.Controllers.PersonController.Index (CRUDEx)'
+2025-09-07 09:31:07.287 +03:00 [INF] Response:
+StatusCode: 200
+GlobalHeader: [Redacted]
+CustomHeader: [Redacted]
+Controller_Header: [Redacted]
+last-Modeified: [Redacted]
+Content-Type: text/html; charset=utf-8
+Set-Cookie: [Redacted]
+X-Frame-Options: [Redacted]
+Cache-Control: [Redacted]
+Pragma: [Redacted]
+2025-09-07 09:31:07.289 +03:00 [INF] HTTP GET /People/index responded 200 in 4246.8493 ms
+2025-09-07 09:31:07.298 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost/People/index - 200 null text/html; charset=utf-8 4271.7599ms
+2025-09-07 09:32:10.936 +03:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-07 09:32:11.299 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost/People/index - null null
+2025-09-07 09:32:11.322 +03:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /People/index
+Host: localhost
+2025-09-07 09:32:11.356 +03:00 [INF] Executing endpoint 'CRUDEx.Controllers.PersonController.Index (CRUDEx)'
+2025-09-07 09:32:11.403 +03:00 [INF] Route matched with {action = "Index", controller = "Person"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller CRUDEx.Controllers.PersonController (CRUDEx).
+2025-09-07 09:32:11.691 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync  - before 
+2025-09-07 09:32:11.692 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync  - before 
+2025-09-07 09:32:11.692 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync  - before 
+2025-09-07 09:32:11.694 +03:00 [INF] this is from action filter executing (before )
+2025-09-07 09:32:11.694 +03:00 [INF] Code red : this is from add response header filter going to the personList filter
+2025-09-07 09:32:11.695 +03:00 [INF] hitting the index action
+2025-09-07 09:32:11.696 +03:00 [INF] getting all people 
+2025-09-07 09:32:11.698 +03:00 [INF] getting persons from repo
+2025-09-07 09:32:15.257 +03:00 [INF] this is from action filter executed (after)
+2025-09-07 09:32:15.258 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync - after
+2025-09-07 09:32:15.261 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync - after
+2025-09-07 09:32:15.262 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync - after
+2025-09-07 09:32:15.264 +03:00 [INF] false filter wasn't  skipped 
+2025-09-07 09:32:15.265 +03:00 [INF] code blue PersonListResultFilter -before
+2025-09-07 09:32:15.286 +03:00 [INF] Executing ViewResult, running view Index.
+2025-09-07 09:32:15.744 +03:00 [INF] Executed ViewResult - view Index executed in 458.1028ms.
+2025-09-07 09:32:15.745 +03:00 [INF] code blue PersonListResultFilter -after
+2025-09-07 09:32:15.747 +03:00 [INF] Executed action CRUDEx.Controllers.PersonController.Index (CRUDEx) in 4342.2927ms
+2025-09-07 09:32:15.747 +03:00 [INF] Executed endpoint 'CRUDEx.Controllers.PersonController.Index (CRUDEx)'
+2025-09-07 09:32:15.748 +03:00 [INF] Response:
+StatusCode: 200
+GlobalHeader: [Redacted]
+CustomHeader: [Redacted]
+Controller_Header: [Redacted]
+last-Modeified: [Redacted]
+Content-Type: text/html; charset=utf-8
+Set-Cookie: [Redacted]
+X-Frame-Options: [Redacted]
+Cache-Control: [Redacted]
+Pragma: [Redacted]
+2025-09-07 09:32:15.751 +03:00 [INF] HTTP GET /People/index responded 200 in 4436.7233 ms
+2025-09-07 09:32:15.760 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost/People/index - 200 null text/html; charset=utf-8 4462.9933ms

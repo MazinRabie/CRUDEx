@@ -1,11 +1,39 @@
 {
   "Version": 1,
-  "Hash": "I0jWq39sIKSL2vj9V8tEOIcpMA12Au3LVBVkCs/T5BU=",
+  "Hash": "s5NU4kXanemaIo1ObO4vbibf0Qc/ESoGeQ+5SR1qn/M=",
   "Source": "CRUDEx",
   "BasePath": "_content/CRUDEx",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "CRUDEx\\wwwroot",
+      "Source": "CRUDEx",
+      "ContentRoot": "C:\\Users\\hp\\source\\repos\\CRUDEx\\CRUDEx\\wwwroot\\",
+      "BasePath": "_content/CRUDEx",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\hp\\source\\repos\\CRUDEx\\CRUDEx\\wwwroot\\images\\Error.jpg",
+      "SourceId": "CRUDEx",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hp\\source\\repos\\CRUDEx\\CRUDEx\\wwwroot\\",
+      "BasePath": "_content/CRUDEx",
+      "RelativePath": "images/Error.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Error.jpg"
+    }
+  ]
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "w2ONwgsjvEs=",
+  "dgSpecHash": "IyZa5CiVJIc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\Repository\\Repository.csproj",
+  "projectFilePath": "c:\\Users\\hp\\source\\repos\\CRUDEx\\Repository\\Repository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hp\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

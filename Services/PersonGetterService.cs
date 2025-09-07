@@ -11,11 +11,11 @@ using Services.Helpers;
 
 namespace Services
 {
-    public class PersonService : IPersonService
+    public class PersonGetterService : IPersonGetterService
     {
         // private readonly ICountriesService _countriesService;
         // private readonly MyDbContext _db;
-        private readonly ILogger<PersonService> _logger;
+        private readonly ILogger<PersonGetterService> _logger;
         private readonly IDiagnosticContext _diagnosticsContext;
 
         private readonly IPersonRepository _personRepository;
@@ -37,7 +37,7 @@ namespace Services
         //    MockData();
         //}
         // public PersonService(IPersonRepository personRepository, MyDbContext myDbContext)
-        public PersonService(IPersonRepository personRepository, ILogger<PersonService> logger, IDiagnosticContext diagnosticsContext)
+        public PersonGetterService(IPersonRepository personRepository, ILogger<PersonGetterService> logger, IDiagnosticContext diagnosticsContext)
         {
             // _db = myDbContext;
             _personRepository = personRepository;
@@ -83,21 +83,12 @@ namespace Services
             personRes!.CountryName = person.Country?.CountryName!;
             return personRes;
         }
-        public async Task<PersonResponse>? AddPerson(AddPersonRequest? PersonAddRequest)
+        public async Task<Person?> GetPerson(Guid? id)
         {
-            if (PersonAddRequest == null) throw new ArgumentNullException(nameof(PersonAddRequest));
-            //if (PersonAddRequest.Email == null || PersonAddRequest.Name == null || PersonAddRequest.DateOfBirth == null) throw new ArgumentException("invalid person properties");
-            ModelValidation.ValidateModel(PersonAddRequest);
-
-
-            var person = PersonAddRequest.ToPerson();
-            var PersonReturned = await _personRepository.AddPerson(person);
-            // await _db.Persons.AddAsync(person);
-            // await _db.SaveChangesAsync();
-
-            var personRes = await ToPersonResponse(PersonReturned);
-
-            return personRes;
+            if (id == null) return null;
+            // var person = await _db.Persons.FirstOrDefaultAsync(x => x.Id == id);
+            var person = await _personRepository.GetPersonById(id);
+            return person;
         }
 
         public async Task<List<PersonResponse>> GetAllPeople()
@@ -107,13 +98,6 @@ namespace Services
             var persons = await _personRepository.GetAllPersons();
             _diagnosticsContext.Set("Persons", persons);
             return persons?.Select(x => x.ToPersonResponse()).ToList()!;
-        }
-        private async Task<Person?> GetPerson(Guid? id)
-        {
-            if (id == null) return null;
-            // var person = await _db.Persons.FirstOrDefaultAsync(x => x.Id == id);
-            var person = await _personRepository.GetPersonById(id);
-            return person;
         }
         public async Task<PersonResponse?>? GetPersonByID(Guid? id)
         {
@@ -137,94 +121,6 @@ namespace Services
             //(p,key)=>p.Name.Contains(key,StringComparison.OrdinalIgnoreCase) 
             return filtered;
         }
-
-        public List<PersonResponse> GetSortedPersons(List<PersonResponse> personResponses, string? sortBy, ServiceContracts.Enums.SortingOrderEnum sortingOrder)
-        {
-            var listOfRes = new List<PersonResponse>();
-            if (sortingOrder == ServiceContracts.Enums.SortingOrderEnum.Ascending)
-            {
-                switch (sortBy)
-                {
-                    case (nameof(PersonResponse.Id)):
-                        listOfRes = personResponses.OrderBy(x => x.Id).ToList();
-                        break;
-                    case (nameof(PersonResponse.Name)):
-                        listOfRes = personResponses.OrderBy(x => x.Name).ToList();
-                        break;
-                    case (nameof(PersonResponse.Address)):
-                        listOfRes = personResponses.OrderBy(x => x.Address).ToList();
-                        break;
-                    case (nameof(PersonResponse.Email)):
-                        listOfRes = personResponses.OrderBy(x => x.Email).ToList();
-                        break;
-                    case (nameof(PersonResponse.age)):
-                        listOfRes = personResponses.OrderBy(x => x.age).ToList();
-                        break;
-                    case ("Country"):
-                        listOfRes = personResponses.OrderBy(x => x.CountryName).ToList();
-                        break;
-                    case (nameof(PersonResponse.Gender)):
-                        listOfRes = personResponses.OrderBy(x => x.Gender).ToList();
-                        break;
-
-
-                }
-            }
-            else
-            {
-                switch (sortBy)
-                {
-                    case (nameof(PersonResponse.Id)):
-                        listOfRes = personResponses.OrderByDescending(x => x.Id).ToList();
-                        break;
-                    case (nameof(PersonResponse.Name)):
-                        listOfRes = personResponses.OrderByDescending(x => x.Name).ToList();
-                        break;
-                    case (nameof(PersonResponse.Address)):
-                        listOfRes = personResponses.OrderByDescending(x => x.Address).ToList();
-                        break;
-                    case (nameof(PersonResponse.Email)):
-                        listOfRes = personResponses.OrderByDescending(x => x.Email).ToList();
-                        break;
-                    case (nameof(PersonResponse.age)):
-                        listOfRes = personResponses.OrderByDescending(x => x.age).ToList();
-                        break;
-                    case ("Country"):
-                        listOfRes = personResponses.OrderByDescending(x => x.CountryName).ToList();
-                        break;
-                    case (nameof(PersonResponse.Gender)):
-                        listOfRes = personResponses.OrderByDescending(x => x.Gender).ToList();
-                        break;
-
-
-                }
-            }
-            return listOfRes;
-
-        }
-
-        public async Task<PersonResponse> UpdatePerson(PersonUpdateRequest? personUpdateRequest)
-        {
-            if (personUpdateRequest == null) throw new ArgumentNullException(nameof(personUpdateRequest));
-            ModelValidation.ValidateModel(personUpdateRequest);
-            var person_from_datastore = await GetPerson(personUpdateRequest?.Id);
-            if (person_from_datastore == null) return null;
-            person_from_datastore?.MapUpdates(personUpdateRequest);
-            // await _db.SaveChangesAsync();
-            await _personRepository.UpdatePerson(person_from_datastore);
-            return await GetPersonByID(personUpdateRequest.Id);
-        }
-        public async Task<bool> DeletePerson(Guid? id)
-        {
-            if (id == null) return false;
-            // var person = await _db.Persons.FirstOrDefaultAsync(x => x.Id == id);
-            var person = await _personRepository.GetPersonById(id);
-            if (person == null) return false;
-            // _db.Remove(person);
-            // await _db.SaveChangesAsync();
-            return await _personRepository.DeletePerson(person);
-        }
-
     }
 
 }

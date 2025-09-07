@@ -4644,14 +4644,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "c:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj": {
-              "projectPath": "c:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj"
+            "C:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj"
             },
             "C:\\Users\\hp\\source\\repos\\CRUDEx\\RepositoryContracts\\RepositoryContracts.csproj": {
               "projectPath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\RepositoryContracts\\RepositoryContracts.csproj"
             },
-            "C:\\Users\\hp\\source\\repos\\CRUDEx\\Repository\\Repository.csproj": {
-              "projectPath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\Repository\\Repository.csproj"
+            "c:\\Users\\hp\\source\\repos\\CRUDEx\\Repository\\Repository.csproj": {
+              "projectPath": "c:\\Users\\hp\\source\\repos\\CRUDEx\\Repository\\Repository.csproj"
             },
             "C:\\Users\\hp\\source\\repos\\CRUDEx\\ServiceContracts\\ServiceContracts.csproj": {
               "projectPath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\ServiceContracts\\ServiceContracts.csproj"

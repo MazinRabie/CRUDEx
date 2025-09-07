@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\hp\\source\\repos\\CRUDEx\\CRUDEx\\wwwroot\\images\\Error.jpg",
+      "PackagePath": "staticwebassets\\images\\Error.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CRUDEx.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.CRUDEx.props",
+      "PackagePath": "build\\CRUDEx.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.CRUDEx.props",
+      "PackagePath": "buildMultiTargeting\\CRUDEx.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.CRUDEx.props",
+      "PackagePath": "buildTransitive\\CRUDEx.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

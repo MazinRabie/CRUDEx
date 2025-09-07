@@ -22,16 +22,24 @@ namespace CRUDEx.Controllers
 
     {
         private readonly SortFlags _sortFlags;
-        private readonly IPersonService _personService;
+        private readonly IPersonAdderService _personAdderService;
+        private readonly IPersonGetterService _personGetterService;
+        private readonly IPersonUpdaterService _personUpdaterService;
+        private readonly IPersonDeleterService _personDeleterService;
+        private readonly IPersonSorterService _personSorterService;
         private readonly ICountriesService _countriesService;
         private readonly ILogger<PersonController> _logger;
 
-        public PersonController(IPersonService personService, ICountriesService countriesService, SortFlags sortFlags, ILogger<PersonController> logger)
+        public PersonController(ICountriesService countriesService, SortFlags sortFlags, ILogger<PersonController> logger, IPersonAdderService personAdderService, IPersonGetterService personGetterService, IPersonUpdaterService personUpdaterService, IPersonDeleterService personDeleterService, IPersonSorterService personSorterService)
         {
-            _personService = personService;
             _countriesService = countriesService;
             _sortFlags = sortFlags;
             _logger = logger;
+            _personAdderService = personAdderService;
+            _personGetterService = personGetterService;
+            _personUpdaterService = personUpdaterService;
+            _personDeleterService = personDeleterService;
+            _personSorterService = personSorterService;
         }
         [Route("/")]
         [Route("People/index")]
@@ -43,7 +51,7 @@ namespace CRUDEx.Controllers
         {
 
             _logger.LogInformation("hitting the index action");
-            var people = await _personService.GetAllPeople();
+            var people = await _personGetterService.GetAllPeople();
             return View(model: people);
         }
         [Route("/SortPersons")]
@@ -65,8 +73,8 @@ namespace CRUDEx.Controllers
             }
             _sortFlags.SetProp(sortBy);
 
-            var persons = await _personService.GetAllPeople();
-            var SortedModel = _personService.GetSortedPersons(persons, sortBy, sortOrder);
+            var persons = await _personGetterService.GetAllPeople();
+            var SortedModel = _personSorterService.GetSortedPersons(persons, sortBy, sortOrder);
             _logger.LogInformation($"sorting people with {sortBy}");
             return View(model: SortedModel, viewName: "index");
 
@@ -77,7 +85,7 @@ namespace CRUDEx.Controllers
         public async Task<IActionResult> Search([FromForm] string searchBy, string searchKey)
         {
 
-            var filtered = await _personService.GetFilteredPeople(searchBy, searchKey);
+            var filtered = await _personGetterService.GetFilteredPeople(searchBy, searchKey);
             return View(model: filtered, viewName: "index");
         }
 
@@ -85,7 +93,7 @@ namespace CRUDEx.Controllers
         [TypeFilter(typeof(AddTokenAuthorizationToCookiesFilter))]
         public async Task<IActionResult> UpdatePersonGet(Guid id)
         {
-            var person = (await _personService.GetPersonByID(id))?.ToPersonUpdateRequest();
+            var person = (await _personGetterService.GetPersonByID(id))?.ToPersonUpdateRequest();
             if (person == null) return RedirectToAction(nameof(Index));
             var countries = await _countriesService.GetAllCountries();
             ViewBag.Countries = new SelectList(
@@ -102,7 +110,7 @@ namespace CRUDEx.Controllers
         [TypeFilter(typeof(TokenAuthorizationFilter))]
         public async Task<IActionResult> UpdatePersonPost(PersonUpdateRequest personReq)
         {
-            var person = await _personService.UpdatePerson(personReq);
+            var person = await _personUpdaterService.UpdatePerson(personReq);
             return RedirectToAction("index");
 
         }
@@ -111,7 +119,7 @@ namespace CRUDEx.Controllers
 
         public async Task<IActionResult> DeletePerson(Guid id)
         {
-            await _personService.DeletePerson(id);
+            await _personDeleterService.DeletePerson(id);
             return RedirectToAction("index");
         }
 
@@ -130,7 +138,7 @@ namespace CRUDEx.Controllers
         public async Task<IActionResult> CreatePersonPost(AddPersonRequest personReq)
         {
 
-            await _personService.AddPerson(personReq);
+            await _personAdderService.AddPerson(personReq);
             return RedirectToAction("index");
 
         }

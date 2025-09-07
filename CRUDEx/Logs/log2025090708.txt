@@ -1,0 +1,626 @@
+2025-09-07 08:11:43.021 +03:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-07 08:11:43.439 +03:00 [INF] Now listening on: http://localhost:5095
+2025-09-07 08:11:48.889 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/ - null null
+2025-09-07 08:11:48.972 +03:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8
+Connection: keep-alive
+Host: localhost:5095
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cookie: [Redacted]
+Referer: [Redacted]
+Upgrade-Insecure-Requests: [Redacted]
+Sec-GPC: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-User: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2025-09-07 08:11:49.128 +03:00 [INF] Executing endpoint 'CRUDEx.Controllers.PersonController.Index (CRUDEx)'
+2025-09-07 08:11:49.520 +03:00 [INF] Route matched with {action = "Index", controller = "Person"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller CRUDEx.Controllers.PersonController (CRUDEx).
+2025-09-07 08:11:50.066 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync  - before 
+2025-09-07 08:11:50.069 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync  - before 
+2025-09-07 08:11:50.071 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync  - before 
+2025-09-07 08:11:50.083 +03:00 [INF] this is from action filter executing (before )
+2025-09-07 08:11:50.085 +03:00 [INF] Code red : this is from add response header filter going to the personList filter
+2025-09-07 08:11:50.088 +03:00 [INF] hitting the index action
+2025-09-07 08:11:50.092 +03:00 [INF] getting all people 
+2025-09-07 08:11:50.103 +03:00 [INF] getting persons from repo
+2025-09-07 08:11:53.882 +03:00 [INF] Executed DbCommand (57ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Address], [p].[CountryId], [p].[DateOfBirth], [p].[Email], [p].[Gender], [p].[Name], [p].[RecieveNewsLetters], [c].[guid], [c].[CountryName]
+FROM [Persons] AS [p]
+INNER JOIN [Countries] AS [c] ON [p].[CountryId] = [c].[guid]
+2025-09-07 08:11:54.138 +03:00 [INF] this is from action filter executed (after)
+2025-09-07 08:11:54.140 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync - after
+2025-09-07 08:11:54.145 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync - after
+2025-09-07 08:11:54.149 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync - after
+2025-09-07 08:11:54.156 +03:00 [INF] false filter wasn't  skipped 
+2025-09-07 08:11:54.164 +03:00 [INF] code blue PersonListResultFilter -before
+2025-09-07 08:11:54.175 +03:00 [INF] Executing ViewResult, running view Index.
+2025-09-07 08:11:54.524 +03:00 [INF] Executed ViewResult - view Index executed in 350.7549ms.
+2025-09-07 08:11:54.527 +03:00 [INF] code blue PersonListResultFilter -after
+2025-09-07 08:11:54.530 +03:00 [INF] Executed action CRUDEx.Controllers.PersonController.Index (CRUDEx) in 5005.2722ms
+2025-09-07 08:11:54.534 +03:00 [INF] Executed endpoint 'CRUDEx.Controllers.PersonController.Index (CRUDEx)'
+2025-09-07 08:11:54.566 +03:00 [INF] Response:
+StatusCode: 200
+Content-Type: text/html; charset=utf-8
+Date: Sun, 07 Sep 2025 05:11:54 GMT
+Server: Kestrel
+Cache-Control: [Redacted]
+Pragma: [Redacted]
+Transfer-Encoding: chunked
+GlobalHeader: [Redacted]
+CustomHeader: [Redacted]
+Controller_Header: [Redacted]
+last-Modeified: [Redacted]
+2025-09-07 08:11:54.627 +03:00 [INF] HTTP GET / responded 200 in 5689.3470 ms
+2025-09-07 08:11:54.672 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/ - 200 null text/html; charset=utf-8 5784.6569ms
+2025-09-07 08:11:54.687 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-07 08:11:54.695 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/_framework/aspnetcore-browser-refresh.js - 200 13710 application/javascript; charset=utf-8 7.2696ms
+2025-09-07 08:11:54.745 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/css/site.css - null null
+2025-09-07 08:11:54.754 +03:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /css/site.css
+Accept: text/css,*/*;q=0.1
+Connection: keep-alive
+Host: localhost:5095
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cookie: [Redacted]
+Referer: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+Sec-GPC: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2025-09-07 08:11:54.829 +03:00 [INF] Response:
+StatusCode: 404
+2025-09-07 08:11:54.849 +03:00 [INF] HTTP GET /css/site.css responded 404 in 95.5073 ms
+2025-09-07 08:11:54.852 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/css/site.css - 404 0 null 107.2098ms
+2025-09-07 08:11:54.870 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5095/css/site.css, Response status code: 404
+2025-09-07 08:11:59.698 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/ - null null
+2025-09-07 08:11:59.705 +03:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8
+Connection: keep-alive
+Host: localhost:5095
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cookie: [Redacted]
+Upgrade-Insecure-Requests: [Redacted]
+Sec-GPC: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-User: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2025-09-07 08:11:59.718 +03:00 [INF] Executing endpoint 'CRUDEx.Controllers.PersonController.Index (CRUDEx)'
+2025-09-07 08:11:59.721 +03:00 [INF] Route matched with {action = "Index", controller = "Person"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller CRUDEx.Controllers.PersonController (CRUDEx).
+2025-09-07 08:11:59.733 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync  - before 
+2025-09-07 08:11:59.735 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync  - before 
+2025-09-07 08:11:59.737 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync  - before 
+2025-09-07 08:11:59.740 +03:00 [INF] this is from action filter executing (before )
+2025-09-07 08:11:59.747 +03:00 [INF] Code red : this is from add response header filter going to the personList filter
+2025-09-07 08:11:59.750 +03:00 [INF] hitting the index action
+2025-09-07 08:11:59.751 +03:00 [INF] getting all people 
+2025-09-07 08:11:59.752 +03:00 [INF] getting persons from repo
+2025-09-07 08:11:59.895 +03:00 [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Address], [p].[CountryId], [p].[DateOfBirth], [p].[Email], [p].[Gender], [p].[Name], [p].[RecieveNewsLetters], [c].[guid], [c].[CountryName]
+FROM [Persons] AS [p]
+INNER JOIN [Countries] AS [c] ON [p].[CountryId] = [c].[guid]
+2025-09-07 08:11:59.939 +03:00 [INF] this is from action filter executed (after)
+2025-09-07 08:11:59.951 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync - after
+2025-09-07 08:11:59.953 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync - after
+2025-09-07 08:11:59.955 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync - after
+2025-09-07 08:11:59.962 +03:00 [INF] false filter wasn't  skipped 
+2025-09-07 08:11:59.965 +03:00 [INF] code blue PersonListResultFilter -before
+2025-09-07 08:11:59.969 +03:00 [INF] Executing ViewResult, running view Index.
+2025-09-07 08:11:59.995 +03:00 [INF] Executed ViewResult - view Index executed in 27.6372ms.
+2025-09-07 08:12:00.001 +03:00 [INF] code blue PersonListResultFilter -after
+2025-09-07 08:12:00.006 +03:00 [INF] Executed action CRUDEx.Controllers.PersonController.Index (CRUDEx) in 280.5154ms
+2025-09-07 08:12:00.067 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-07 08:12:00.068 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/css/site.css - null null
+2025-09-07 08:12:00.070 +03:00 [INF] Executed endpoint 'CRUDEx.Controllers.PersonController.Index (CRUDEx)'
+2025-09-07 08:12:00.074 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/_framework/aspnetcore-browser-refresh.js - 200 13710 application/javascript; charset=utf-8 7.0824ms
+2025-09-07 08:12:00.080 +03:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /css/site.css
+Accept: text/css,*/*;q=0.1
+Connection: keep-alive
+Host: localhost:5095
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cookie: [Redacted]
+Referer: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+Sec-GPC: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2025-09-07 08:12:00.081 +03:00 [INF] Response:
+StatusCode: 200
+Content-Type: text/html; charset=utf-8
+Date: Sun, 07 Sep 2025 05:11:59 GMT
+Server: Kestrel
+Cache-Control: [Redacted]
+Pragma: [Redacted]
+Transfer-Encoding: chunked
+GlobalHeader: [Redacted]
+CustomHeader: [Redacted]
+Controller_Header: [Redacted]
+last-Modeified: [Redacted]
+2025-09-07 08:12:00.095 +03:00 [INF] Response:
+StatusCode: 404
+2025-09-07 08:12:00.103 +03:00 [INF] HTTP GET /css/site.css responded 404 in 23.8584 ms
+2025-09-07 08:12:00.097 +03:00 [INF] HTTP GET / responded 200 in 392.9558 ms
+2025-09-07 08:12:00.107 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/css/site.css - 404 0 null 38.5756ms
+2025-09-07 08:12:00.111 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/ - 200 null text/html; charset=utf-8 412.5661ms
+2025-09-07 08:12:00.118 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5095/css/site.css, Response status code: 404
+2025-09-07 08:12:01.334 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/favicon.ico - null null
+2025-09-07 08:12:01.362 +03:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Connection: keep-alive
+Host: localhost:5095
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cookie: [Redacted]
+Referer: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+Sec-GPC: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2025-09-07 08:12:01.375 +03:00 [INF] Response:
+StatusCode: 404
+2025-09-07 08:12:01.378 +03:00 [INF] HTTP GET /favicon.ico responded 404 in 16.1053 ms
+2025-09-07 08:12:01.382 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/favicon.ico - 404 0 null 48.1678ms
+2025-09-07 08:12:01.386 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5095/favicon.ico, Response status code: 404
+2025-09-07 08:12:03.516 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/SortPersons?sortBy=Name - null null
+2025-09-07 08:12:03.521 +03:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /SortPersons
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8
+Connection: keep-alive
+Host: localhost:5095
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cookie: [Redacted]
+Referer: [Redacted]
+Upgrade-Insecure-Requests: [Redacted]
+Sec-GPC: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-User: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2025-09-07 08:12:03.531 +03:00 [INF] Executing endpoint 'CRUDEx.Controllers.PersonController.SortPersons (CRUDEx)'
+2025-09-07 08:12:03.587 +03:00 [INF] Route matched with {action = "SortPersons", controller = "Person"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SortPersons(System.String) on controller CRUDEx.Controllers.PersonController (CRUDEx).
+2025-09-07 08:12:03.969 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync  - before 
+2025-09-07 08:12:03.972 +03:00 [INF] sort actionFilter executing 
+2025-09-07 08:12:03.974 +03:00 [INF] the value of Name
+2025-09-07 08:12:03.977 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync  - before 
+2025-09-07 08:12:03.985 +03:00 [INF] getting all people 
+2025-09-07 08:12:03.987 +03:00 [INF] getting persons from repo
+2025-09-07 08:12:04.218 +03:00 [INF] Executed DbCommand (133ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Address], [p].[CountryId], [p].[DateOfBirth], [p].[Email], [p].[Gender], [p].[Name], [p].[RecieveNewsLetters], [c].[guid], [c].[CountryName]
+FROM [Persons] AS [p]
+INNER JOIN [Countries] AS [c] ON [p].[CountryId] = [c].[guid]
+2025-09-07 08:12:04.229 +03:00 [INF] sorting people with Name
+2025-09-07 08:12:04.230 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync - after
+2025-09-07 08:12:04.327 +03:00 [INF] sort actionFilter executed 
+2025-09-07 08:12:04.475 +03:00 [INF] final value for Name
+2025-09-07 08:12:04.477 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync - after
+2025-09-07 08:12:04.478 +03:00 [INF] false filter wasn't  skipped 
+2025-09-07 08:12:04.480 +03:00 [INF] Executing ViewResult, running view index.
+2025-09-07 08:12:04.487 +03:00 [INF] Executed ViewResult - view index executed in 8.0794ms.
+2025-09-07 08:12:04.508 +03:00 [INF] Executed action CRUDEx.Controllers.PersonController.SortPersons (CRUDEx) in 768.4187ms
+2025-09-07 08:12:04.516 +03:00 [INF] Executed endpoint 'CRUDEx.Controllers.PersonController.SortPersons (CRUDEx)'
+2025-09-07 08:12:04.517 +03:00 [INF] Response:
+StatusCode: 200
+Content-Type: text/html; charset=utf-8
+Date: Sun, 07 Sep 2025 05:12:03 GMT
+Server: Kestrel
+Cache-Control: [Redacted]
+Pragma: [Redacted]
+Transfer-Encoding: chunked
+GlobalHeader: [Redacted]
+Controller_Header: [Redacted]
+2025-09-07 08:12:04.520 +03:00 [INF] HTTP GET /SortPersons responded 200 in 999.0667 ms
+2025-09-07 08:12:04.531 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/SortPersons?sortBy=Name - 200 null text/html; charset=utf-8 1014.9847ms
+2025-09-07 08:12:04.694 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-07 08:12:04.695 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/css/site.css - null null
+2025-09-07 08:12:04.738 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/_framework/aspnetcore-browser-refresh.js - 200 13710 application/javascript; charset=utf-8 44.0555ms
+2025-09-07 08:12:04.738 +03:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /css/site.css
+Accept: text/css,*/*;q=0.1
+Connection: keep-alive
+Host: localhost:5095
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cookie: [Redacted]
+Referer: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+Sec-GPC: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2025-09-07 08:12:04.767 +03:00 [INF] Response:
+StatusCode: 404
+2025-09-07 08:12:04.784 +03:00 [INF] HTTP GET /css/site.css responded 404 in 45.3629 ms
+2025-09-07 08:12:04.799 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/css/site.css - 404 0 null 104.1019ms
+2025-09-07 08:12:04.813 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5095/css/site.css, Response status code: 404
+2025-09-07 08:12:07.977 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/Person/CreatePersonGet - null null
+2025-09-07 08:12:07.983 +03:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /Person/CreatePersonGet
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8
+Connection: keep-alive
+Host: localhost:5095
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cookie: [Redacted]
+Referer: [Redacted]
+Upgrade-Insecure-Requests: [Redacted]
+Sec-GPC: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-User: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2025-09-07 08:12:08.001 +03:00 [INF] Executing endpoint 'CRUDEx.Controllers.PersonController.CreatePersonGet (CRUDEx)'
+2025-09-07 08:12:08.017 +03:00 [INF] Route matched with {action = "CreatePersonGet", controller = "Person"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePersonGet() on controller CRUDEx.Controllers.PersonController (CRUDEx).
+2025-09-07 08:12:08.020 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync  - before 
+2025-09-07 08:12:08.023 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync  - before 
+2025-09-07 08:12:08.080 +03:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[guid], [c].[CountryName]
+FROM [Countries] AS [c]
+2025-09-07 08:12:08.088 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync - after
+2025-09-07 08:12:08.090 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync - after
+2025-09-07 08:12:08.093 +03:00 [INF] false filter wasn't  skipped 
+2025-09-07 08:12:08.100 +03:00 [INF] Executing ViewResult, running view CreatePersonView.
+2025-09-07 08:12:08.317 +03:00 [INF] Executed ViewResult - view CreatePersonView executed in 219.2988ms.
+2025-09-07 08:12:08.319 +03:00 [INF] Executed action CRUDEx.Controllers.PersonController.CreatePersonGet (CRUDEx) in 298.7815ms
+2025-09-07 08:12:08.320 +03:00 [INF] Executed endpoint 'CRUDEx.Controllers.PersonController.CreatePersonGet (CRUDEx)'
+2025-09-07 08:12:08.323 +03:00 [INF] Response:
+StatusCode: 200
+Content-Type: text/html; charset=utf-8
+Date: Sun, 07 Sep 2025 05:12:07 GMT
+Server: Kestrel
+Cache-Control: [Redacted]
+Pragma: [Redacted]
+Transfer-Encoding: chunked
+GlobalHeader: [Redacted]
+Controller_Header: [Redacted]
+2025-09-07 08:12:08.336 +03:00 [INF] HTTP GET /Person/CreatePersonGet responded 200 in 352.5568 ms
+2025-09-07 08:12:08.340 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/Person/CreatePersonGet - 200 null text/html; charset=utf-8 361.5101ms
+2025-09-07 08:12:08.380 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-07 08:12:08.381 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/css/site.css - null null
+2025-09-07 08:12:08.385 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/_framework/aspnetcore-browser-refresh.js - 200 13710 application/javascript; charset=utf-8 5.0771ms
+2025-09-07 08:12:08.392 +03:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /css/site.css
+Accept: text/css,*/*;q=0.1
+Connection: keep-alive
+Host: localhost:5095
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cookie: [Redacted]
+Referer: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+Sec-GPC: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2025-09-07 08:12:08.403 +03:00 [INF] Response:
+StatusCode: 404
+2025-09-07 08:12:08.404 +03:00 [INF] HTTP GET /css/site.css responded 404 in 12.5071 ms
+2025-09-07 08:12:08.415 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/css/site.css - 404 0 null 33.8505ms
+2025-09-07 08:12:08.421 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5095/css/site.css, Response status code: 404
+2025-09-07 08:12:11.726 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/ - null null
+2025-09-07 08:12:11.730 +03:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8
+Connection: keep-alive
+Host: localhost:5095
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cookie: [Redacted]
+Referer: [Redacted]
+Upgrade-Insecure-Requests: [Redacted]
+Sec-GPC: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-User: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2025-09-07 08:12:11.762 +03:00 [INF] Executing endpoint 'CRUDEx.Controllers.PersonController.Index (CRUDEx)'
+2025-09-07 08:12:11.768 +03:00 [INF] Route matched with {action = "Index", controller = "Person"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller CRUDEx.Controllers.PersonController (CRUDEx).
+2025-09-07 08:12:11.772 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync  - before 
+2025-09-07 08:12:11.787 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync  - before 
+2025-09-07 08:12:11.795 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync  - before 
+2025-09-07 08:12:11.804 +03:00 [INF] this is from action filter executing (before )
+2025-09-07 08:12:11.815 +03:00 [INF] Code red : this is from add response header filter going to the personList filter
+2025-09-07 08:12:11.816 +03:00 [INF] hitting the index action
+2025-09-07 08:12:11.818 +03:00 [INF] getting all people 
+2025-09-07 08:12:11.819 +03:00 [INF] getting persons from repo
+2025-09-07 08:12:11.835 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Address], [p].[CountryId], [p].[DateOfBirth], [p].[Email], [p].[Gender], [p].[Name], [p].[RecieveNewsLetters], [c].[guid], [c].[CountryName]
+FROM [Persons] AS [p]
+INNER JOIN [Countries] AS [c] ON [p].[CountryId] = [c].[guid]
+2025-09-07 08:12:11.849 +03:00 [INF] this is from action filter executed (after)
+2025-09-07 08:12:11.850 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync - after
+2025-09-07 08:12:11.852 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync - after
+2025-09-07 08:12:11.853 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync - after
+2025-09-07 08:12:11.864 +03:00 [INF] false filter wasn't  skipped 
+2025-09-07 08:12:11.866 +03:00 [INF] code blue PersonListResultFilter -before
+2025-09-07 08:12:11.868 +03:00 [INF] Executing ViewResult, running view Index.
+2025-09-07 08:12:11.870 +03:00 [INF] Executed ViewResult - view Index executed in 2.616ms.
+2025-09-07 08:12:11.931 +03:00 [INF] code blue PersonListResultFilter -after
+2025-09-07 08:12:11.934 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/css/site.css - null null
+2025-09-07 08:12:11.934 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-07 08:12:11.936 +03:00 [INF] Executed action CRUDEx.Controllers.PersonController.Index (CRUDEx) in 165.1223ms
+2025-09-07 08:12:11.948 +03:00 [INF] Executed endpoint 'CRUDEx.Controllers.PersonController.Index (CRUDEx)'
+2025-09-07 08:12:11.946 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/_framework/aspnetcore-browser-refresh.js - 200 13710 application/javascript; charset=utf-8 11.5054ms
+2025-09-07 08:12:11.942 +03:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /css/site.css
+Accept: text/css,*/*;q=0.1
+Connection: keep-alive
+Host: localhost:5095
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cookie: [Redacted]
+Referer: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+Sec-GPC: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2025-09-07 08:12:11.951 +03:00 [INF] Response:
+StatusCode: 200
+Content-Type: text/html; charset=utf-8
+Date: Sun, 07 Sep 2025 05:12:11 GMT
+Server: Kestrel
+Cache-Control: [Redacted]
+Pragma: [Redacted]
+Transfer-Encoding: chunked
+GlobalHeader: [Redacted]
+CustomHeader: [Redacted]
+Controller_Header: [Redacted]
+last-Modeified: [Redacted]
+2025-09-07 08:12:11.963 +03:00 [INF] Response:
+StatusCode: 404
+2025-09-07 08:12:11.965 +03:00 [INF] HTTP GET / responded 200 in 235.4931 ms
+2025-09-07 08:12:11.966 +03:00 [INF] HTTP GET /css/site.css responded 404 in 24.2644 ms
+2025-09-07 08:12:11.969 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/ - 200 null text/html; charset=utf-8 242.9683ms
+2025-09-07 08:12:11.976 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/css/site.css - 404 0 null 41.8894ms
+2025-09-07 08:12:11.986 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5095/css/site.css, Response status code: 404
+2025-09-07 08:12:18.549 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5095/Person/Search - application/x-www-form-urlencoded 208
+2025-09-07 08:12:18.555 +03:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: POST
+Scheme: http
+PathBase: 
+Path: /Person/Search
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8
+Connection: keep-alive
+Host: localhost:5095
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cache-Control: max-age=0
+Content-Type: application/x-www-form-urlencoded
+Cookie: [Redacted]
+Origin: [Redacted]
+Referer: [Redacted]
+Upgrade-Insecure-Requests: [Redacted]
+Content-Length: 208
+Sec-GPC: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-User: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2025-09-07 08:12:18.586 +03:00 [INF] Executing endpoint 'CRUDEx.Controllers.PersonController.Search (CRUDEx)'
+2025-09-07 08:12:18.603 +03:00 [INF] Route matched with {action = "Search", controller = "Person"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Search(System.String, System.String) on controller CRUDEx.Controllers.PersonController (CRUDEx).
+2025-09-07 08:12:18.661 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync  - before 
+2025-09-07 08:12:18.666 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync  - before 
+2025-09-07 08:12:18.803 +03:00 [INF] Executed DbCommand (35ms) [Parameters=[@__ToLower_0_rewritten='?' (Size = 40)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Address], [p].[CountryId], [p].[DateOfBirth], [p].[Email], [p].[Gender], [p].[Name], [p].[RecieveNewsLetters], [c].[guid], [c].[CountryName]
+FROM [Persons] AS [p]
+INNER JOIN [Countries] AS [c] ON [p].[CountryId] = [c].[guid]
+WHERE LOWER([p].[Name]) LIKE @__ToLower_0_rewritten ESCAPE N'\'
+2025-09-07 08:12:18.809 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync - after
+2025-09-07 08:12:18.810 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync - after
+2025-09-07 08:12:18.812 +03:00 [INF] false filter wasn't  skipped 
+2025-09-07 08:12:18.814 +03:00 [INF] Executing ViewResult, running view index.
+2025-09-07 08:12:18.820 +03:00 [INF] Executed ViewResult - view index executed in 5.5382ms.
+2025-09-07 08:12:18.832 +03:00 [INF] Executed action CRUDEx.Controllers.PersonController.Search (CRUDEx) in 213.9826ms
+2025-09-07 08:12:18.847 +03:00 [INF] Executed endpoint 'CRUDEx.Controllers.PersonController.Search (CRUDEx)'
+2025-09-07 08:12:18.850 +03:00 [INF] Response:
+StatusCode: 200
+Content-Type: text/html; charset=utf-8
+Date: Sun, 07 Sep 2025 05:12:18 GMT
+Server: Kestrel
+Cache-Control: [Redacted]
+Pragma: [Redacted]
+Transfer-Encoding: chunked
+GlobalHeader: [Redacted]
+Controller_Header: [Redacted]
+2025-09-07 08:12:18.852 +03:00 [INF] HTTP POST /Person/Search responded 200 in 297.0825 ms
+2025-09-07 08:12:18.856 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5095/Person/Search - 200 null text/html; charset=utf-8 306.1566ms
+2025-09-07 08:12:18.898 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-07 08:12:18.898 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/css/site.css - null null
+2025-09-07 08:12:18.903 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/_framework/aspnetcore-browser-refresh.js - 200 13710 application/javascript; charset=utf-8 4.9648ms
+2025-09-07 08:12:18.915 +03:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /css/site.css
+Accept: text/css,*/*;q=0.1
+Connection: keep-alive
+Host: localhost:5095
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cookie: [Redacted]
+Referer: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+Sec-GPC: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2025-09-07 08:12:18.928 +03:00 [INF] Response:
+StatusCode: 404
+2025-09-07 08:12:18.937 +03:00 [INF] HTTP GET /css/site.css responded 404 in 22.1067 ms
+2025-09-07 08:12:18.946 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/css/site.css - 404 0 null 47.4667ms
+2025-09-07 08:12:18.954 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5095/css/site.css, Response status code: 404
+2025-09-07 08:12:21.773 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/ - null null
+2025-09-07 08:12:21.776 +03:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8
+Connection: keep-alive
+Host: localhost:5095
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cookie: [Redacted]
+Referer: [Redacted]
+Upgrade-Insecure-Requests: [Redacted]
+Sec-GPC: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-User: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2025-09-07 08:12:21.785 +03:00 [INF] Executing endpoint 'CRUDEx.Controllers.PersonController.Index (CRUDEx)'
+2025-09-07 08:12:21.796 +03:00 [INF] Route matched with {action = "Index", controller = "Person"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller CRUDEx.Controllers.PersonController (CRUDEx).
+2025-09-07 08:12:21.801 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync  - before 
+2025-09-07 08:12:21.803 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync  - before 
+2025-09-07 08:12:21.810 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync  - before 
+2025-09-07 08:12:21.817 +03:00 [INF] this is from action filter executing (before )
+2025-09-07 08:12:21.818 +03:00 [INF] Code red : this is from add response header filter going to the personList filter
+2025-09-07 08:12:21.819 +03:00 [INF] hitting the index action
+2025-09-07 08:12:21.820 +03:00 [INF] getting all people 
+2025-09-07 08:12:21.825 +03:00 [INF] getting persons from repo
+2025-09-07 08:12:21.834 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Address], [p].[CountryId], [p].[DateOfBirth], [p].[Email], [p].[Gender], [p].[Name], [p].[RecieveNewsLetters], [c].[guid], [c].[CountryName]
+FROM [Persons] AS [p]
+INNER JOIN [Countries] AS [c] ON [p].[CountryId] = [c].[guid]
+2025-09-07 08:12:21.845 +03:00 [INF] this is from action filter executed (after)
+2025-09-07 08:12:21.846 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync - after
+2025-09-07 08:12:21.848 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync - after
+2025-09-07 08:12:21.851 +03:00 [INF] executing AddResponseHeaderActionFilter.OnActionExecutionAsync - after
+2025-09-07 08:12:21.852 +03:00 [INF] false filter wasn't  skipped 
+2025-09-07 08:12:21.853 +03:00 [INF] code blue PersonListResultFilter -before
+2025-09-07 08:12:21.861 +03:00 [INF] Executing ViewResult, running view Index.
+2025-09-07 08:12:21.864 +03:00 [INF] Executed ViewResult - view Index executed in 3.5796ms.
+2025-09-07 08:12:21.866 +03:00 [INF] code blue PersonListResultFilter -after
+2025-09-07 08:12:21.869 +03:00 [INF] Executed action CRUDEx.Controllers.PersonController.Index (CRUDEx) in 68.9357ms
+2025-09-07 08:12:21.929 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/css/site.css - null null
+2025-09-07 08:12:21.930 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-07 08:12:21.932 +03:00 [INF] Executed endpoint 'CRUDEx.Controllers.PersonController.Index (CRUDEx)'
+2025-09-07 08:12:21.935 +03:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /css/site.css
+Accept: text/css,*/*;q=0.1
+Connection: keep-alive
+Host: localhost:5095
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cookie: [Redacted]
+Referer: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+Sec-GPC: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2025-09-07 08:12:21.939 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/_framework/aspnetcore-browser-refresh.js - 200 13710 application/javascript; charset=utf-8 9.3741ms
+2025-09-07 08:12:21.943 +03:00 [INF] Response:
+StatusCode: 200
+Content-Type: text/html; charset=utf-8
+Date: Sun, 07 Sep 2025 05:12:21 GMT
+Server: Kestrel
+Cache-Control: [Redacted]
+Pragma: [Redacted]
+Transfer-Encoding: chunked
+GlobalHeader: [Redacted]
+CustomHeader: [Redacted]
+Controller_Header: [Redacted]
+last-Modeified: [Redacted]
+2025-09-07 08:12:21.953 +03:00 [INF] Response:
+StatusCode: 404
+2025-09-07 08:12:21.965 +03:00 [INF] HTTP GET / responded 200 in 188.6354 ms
+2025-09-07 08:12:21.967 +03:00 [INF] HTTP GET /css/site.css responded 404 in 32.0282 ms
+2025-09-07 08:12:21.970 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/ - 200 null text/html; charset=utf-8 196.4584ms
+2025-09-07 08:12:21.985 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/css/site.css - 404 0 null 56.0656ms
+2025-09-07 08:12:21.997 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5095/css/site.css, Response status code: 404

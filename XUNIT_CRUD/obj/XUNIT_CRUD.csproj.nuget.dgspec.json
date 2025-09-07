@@ -29,14 +29,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "c:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj": {
-                "projectPath": "c:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj"
+              "C:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj"
               },
               "C:\\Users\\hp\\source\\repos\\CRUDEx\\RepositoryContracts\\RepositoryContracts.csproj": {
                 "projectPath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\RepositoryContracts\\RepositoryContracts.csproj"
               },
-              "C:\\Users\\hp\\source\\repos\\CRUDEx\\Repository\\Repository.csproj": {
-                "projectPath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\Repository\\Repository.csproj"
+              "c:\\Users\\hp\\source\\repos\\CRUDEx\\Repository\\Repository.csproj": {
+                "projectPath": "c:\\Users\\hp\\source\\repos\\CRUDEx\\Repository\\Repository.csproj"
               },
               "C:\\Users\\hp\\source\\repos\\CRUDEx\\ServiceContracts\\ServiceContracts.csproj": {
                 "projectPath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\ServiceContracts\\ServiceContracts.csproj"
@@ -108,14 +108,14 @@
         }
       }
     },
-    "c:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj": {
+    "C:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "c:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj",
+        "projectPath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\obj\\",
+        "outputPath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -212,8 +212,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "c:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj": {
-                "projectPath": "c:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj"
+              "C:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj"
               }
             }
           }
@@ -252,14 +252,14 @@
         }
       }
     },
-    "C:\\Users\\hp\\source\\repos\\CRUDEx\\Repository\\Repository.csproj": {
+    "c:\\Users\\hp\\source\\repos\\CRUDEx\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hp\\source\\repos\\CRUDEx\\Repository\\Repository.csproj",
+        "projectUniqueName": "c:\\Users\\hp\\source\\repos\\CRUDEx\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\Repository\\Repository.csproj",
+        "projectPath": "c:\\Users\\hp\\source\\repos\\CRUDEx\\Repository\\Repository.csproj",
         "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\Repository\\obj\\",
+        "outputPath": "c:\\Users\\hp\\source\\repos\\CRUDEx\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -342,8 +342,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "c:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj": {
-                "projectPath": "c:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj"
+              "C:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj"
               }
             }
           }
@@ -407,8 +407,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "c:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj": {
-                "projectPath": "c:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj"
+              "C:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\Entities\\Entities.csproj"
               },
               "C:\\Users\\hp\\source\\repos\\CRUDEx\\RepositoryContracts\\RepositoryContracts.csproj": {
                 "projectPath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\RepositoryContracts\\RepositoryContracts.csproj"
@@ -490,8 +490,8 @@
               "C:\\Users\\hp\\source\\repos\\CRUDEx\\RepositoryContracts\\RepositoryContracts.csproj": {
                 "projectPath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\RepositoryContracts\\RepositoryContracts.csproj"
               },
-              "C:\\Users\\hp\\source\\repos\\CRUDEx\\Repository\\Repository.csproj": {
-                "projectPath": "C:\\Users\\hp\\source\\repos\\CRUDEx\\Repository\\Repository.csproj"
+              "c:\\Users\\hp\\source\\repos\\CRUDEx\\Repository\\Repository.csproj": {
+                "projectPath": "c:\\Users\\hp\\source\\repos\\CRUDEx\\Repository\\Repository.csproj"
               }
             }
           }

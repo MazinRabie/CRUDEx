@@ -22,14 +22,26 @@ namespace XUNIT_CRUD
     public class PersonServiceTest
     {
         private readonly ITestOutputHelper _testOutputHelper;
-        private readonly ILogger<PersonService> _logger;
-        private readonly Mock<ILogger<PersonService>> _loggerMock;
+        private readonly Mock<ILogger<PersonAdderService>> _adderloggerMock;
+        private readonly Mock<ILogger<PersonUpdaterService>> _updaterloggerMock;
+        private readonly Mock<ILogger<PersonSorterService>> _sorterloggerMock;
+        private readonly Mock<ILogger<PersonDeleterService>> _deleterloggerMock;
+        private readonly Mock<ILogger<PersonGetterService>> _getterloggerMock;
+        private readonly IPersonAdderService _personAdderService;
+        private readonly IPersonGetterService _personGetterService;
+        private readonly IPersonUpdaterService _personUpdaterService;
+        private readonly IPersonDeleterService _personDeleterService;
+        private readonly IPersonSorterService _personSorterService;
+
+
+        // private readonly ILogger<PersonService> _logger;
+        // private readonly Mock<ILogger<PersonService>> _loggerMock;
         private readonly IDiagnosticContext _diagnosticsContext;
         private readonly Mock<IDiagnosticContext> _diagnosticsContextMock;
         private readonly Mock<IPersonRepository> _mockPersonRepository;
         private readonly IFixture _fixture;
         private readonly IPersonRepository _personRepository;
-        private IPersonService _personsService;
+        // private IPersonAdderService _personsService;
         public PersonServiceTest(ITestOutputHelper testOutputHelper)
         {
             _fixture = new Fixture();
@@ -42,18 +54,27 @@ namespace XUNIT_CRUD
             // _personRepository = new PersonRepository(MockDbContext.Object);
             // _personsService = new PersonService(_personRepository);
             #endregion
-            _loggerMock = new Mock<ILogger<PersonService>>();
-            _logger = _loggerMock.Object;
+            // _loggerMock = new Mock<ILogger<PersonService>>();
+            // _logger = _loggerMock.Object;
             _diagnosticsContextMock = new Mock<IDiagnosticContext>();
             _diagnosticsContext = _diagnosticsContextMock.Object;
             #region  mocking Repository
             _mockPersonRepository = new Mock<IPersonRepository>();
             _personRepository = _mockPersonRepository.Object;
-            _personsService = new PersonService(_personRepository, _logger, _diagnosticsContext);
+            // _personsService = new PersonService(_personRepository, _logger, _diagnosticsContext);
             #endregion
             _testOutputHelper = testOutputHelper;
+            _adderloggerMock = new Mock<ILogger<PersonAdderService>>();
+            _updaterloggerMock = new Mock<ILogger<PersonUpdaterService>>();
+            _sorterloggerMock = new Mock<ILogger<PersonSorterService>>();
+            _deleterloggerMock = new Mock<ILogger<PersonDeleterService>>();
+            _getterloggerMock = new Mock<ILogger<PersonGetterService>>();
+            _personAdderService = new PersonAdderService(_personRepository, _adderloggerMock.Object, _diagnosticsContext);
+            _personGetterService = new PersonGetterService(_personRepository, _getterloggerMock.Object, _diagnosticsContext);
+            _personUpdaterService = new PersonUpdaterService(_personRepository, _updaterloggerMock.Object, _diagnosticsContext, _personGetterService);
+            _personDeleterService = new PersonDeleterService(_personRepository, _deleterloggerMock.Object, _diagnosticsContext);
+            _personSorterService = new PersonSorterService(_personRepository, _sorterloggerMock.Object, _diagnosticsContext);
         }
-
         #region AddPerson
         [Fact]
         public async Task AddPerson_nullPerson_ToThrowArgumentNullException()
@@ -61,7 +82,7 @@ namespace XUNIT_CRUD
             AddPersonRequest? person = null;
             Func<Task> action = (async () =>
             {
-                var res = await _personsService.AddPerson(person);
+                var res = await _personAdderService.AddPerson(person);
 
             });
             await action.Should().ThrowAsync<ArgumentNullException>();
@@ -75,7 +96,7 @@ namespace XUNIT_CRUD
             AddPersonRequest? person = _fixture.Build<AddPersonRequest>().With(x => x.Name, null as string).Create();
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                var res = await _personsService.AddPerson(person);
+                var res = await _personAdderService.AddPerson(person);
 
             });
 
@@ -90,7 +111,7 @@ namespace XUNIT_CRUD
             Person personMock = personReq.ToPerson();
             PersonResponse expectedPersonres = personMock.ToPersonResponse();
             _mockPersonRepository.Setup(x => x.AddPerson(It.IsAny<Person>())).ReturnsAsync(personMock);
-            var res = await _personsService.AddPerson(personReq);
+            var res = await _personAdderService.AddPerson(personReq);
             // var ActualPeopleList = await _personsService.GetAllPeople();
             Assert.True(res.Id != Guid.Empty);
             expectedPersonres.Should().Be(res);
@@ -106,7 +127,7 @@ namespace XUNIT_CRUD
         [Fact]
         public async Task GetPersonById_nullId_ToBeNull()
         {
-            var personRes = await _personsService.GetPersonByID(null);
+            var personRes = await _personGetterService.GetPersonByID(null);
             Assert.Null(personRes);
         }
         [Fact]
@@ -128,7 +149,7 @@ namespace XUNIT_CRUD
 
             Assert.NotNull(Expected_personRes.Id);
             _mockPersonRepository.Setup(x => x.GetPersonWithCountryById(It.IsAny<Guid>())).ReturnsAsync(person);
-            var actualReturnedPersonFromTheMethod = await _personsService.GetPersonByID(Expected_personRes.Id);
+            var actualReturnedPersonFromTheMethod = await _personGetterService.GetPersonByID(Expected_personRes.Id);
             Assert.Equal(Expected_personRes, actualReturnedPersonFromTheMethod);
 
         }
@@ -136,7 +157,7 @@ namespace XUNIT_CRUD
         public async Task GetPersonById_NonExistingPerson_ToBenull()
         {
             _mockPersonRepository.Setup(x => x.GetPersonWithCountryById(It.IsAny<Guid>())).ReturnsAsync(null as Person);
-            var PersonRes = await _personsService.GetPersonByID(Guid.NewGuid());
+            var PersonRes = await _personGetterService.GetPersonByID(Guid.NewGuid());
             Assert.Null(PersonRes);
         }
         #endregion
@@ -147,7 +168,7 @@ namespace XUNIT_CRUD
         {
             var lst = new List<Person>();
             _mockPersonRepository.Setup(x => x.GetAllPersons()).ReturnsAsync(lst);
-            var peopleList = await _personsService.GetAllPeople();
+            var peopleList = await _personGetterService.GetAllPeople();
             Assert.Empty(peopleList);
         }
         [Fact]
@@ -179,7 +200,7 @@ namespace XUNIT_CRUD
             var personResLst = persons.Select(x => x.ToPersonResponse());
             _mockPersonRepository.Setup(x => x.GetAllPersons()).ReturnsAsync(persons);
 
-            var actualReturnedPersonResList = await _personsService.GetAllPeople();
+            var actualReturnedPersonResList = await _personGetterService.GetAllPeople();
             // _testOutputHelper.WriteLine("Actual");
             // foreach (var personRes in ListOfPersonResponses)
             // {
@@ -223,7 +244,7 @@ namespace XUNIT_CRUD
             };
             var personResLst = persons.Select(x => x.ToPersonResponse());
             _mockPersonRepository.Setup(x => x.GetAllPersons()).ReturnsAsync(persons);
-            var actualReturnedPersonResList = await _personsService.GetFilteredPeople(nameof(PersonResponse.Name), "");
+            var actualReturnedPersonResList = await _personGetterService.GetFilteredPeople(nameof(PersonResponse.Name), "");
             // _testOutputHelper.WriteLine("Actual");
             // foreach (var personRes in ListOfPersonResponses)
             // {
@@ -276,7 +297,7 @@ namespace XUNIT_CRUD
             };
             var ExpectedpersonResLst = persons.Select(x => x.ToPersonResponse());
             _mockPersonRepository.Setup(x => x.GetFilteredPersons(It.IsAny<Expression<Func<Person, bool>>>())).ReturnsAsync(persons);
-            var actualReturnedPersonResList = await _personsService.GetFilteredPeople(nameof(PersonResponse.Gender), searchKey);
+            var actualReturnedPersonResList = await _personGetterService.GetFilteredPeople(nameof(PersonResponse.Gender), searchKey);
             ExpectedpersonResLst.Should().BeEquivalentTo(actualReturnedPersonResList);
         }
         #endregion
@@ -326,8 +347,8 @@ namespace XUNIT_CRUD
             };
             var expectedList = persons.Select(x => x.ToPersonResponse()).OrderByDescending(x => x.Name).ToList();
             _mockPersonRepository.Setup(x => x.GetAllPersons()).ReturnsAsync(persons);
-            var allPersons = await _personsService.GetAllPeople();
-            var actualReturnedPersonResList = _personsService.GetSortedPersons(allPersons, nameof(PersonResponse.Name), SortingOrderEnum.Descending);
+            var allPersons = await _personGetterService.GetAllPeople();
+            var actualReturnedPersonResList = _personSorterService.GetSortedPersons(allPersons, nameof(PersonResponse.Name), SortingOrderEnum.Descending);
             _testOutputHelper.WriteLine("Actual");
 
             for (int i = 0; i < actualReturnedPersonResList.Count; i++)
@@ -352,7 +373,7 @@ namespace XUNIT_CRUD
 
             Assert.ThrowsAsync<ArgumentNullException>(async () =>
             {
-                var res = await _personsService.UpdatePerson(personupdateReq);
+                var res = await _personUpdaterService.UpdatePerson(personupdateReq);
 
             });
 
@@ -377,7 +398,7 @@ namespace XUNIT_CRUD
 
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                var res = await _personsService.UpdatePerson(personUpdatereq);
+                var res = await _personUpdaterService.UpdatePerson(personUpdatereq);
 
             });
 
@@ -394,7 +415,7 @@ namespace XUNIT_CRUD
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
 
-                await _personsService.UpdatePerson(personUpdateReq);
+                await _personUpdaterService.UpdatePerson(personUpdateReq);
             });
 
 
@@ -419,7 +440,7 @@ namespace XUNIT_CRUD
             _mockPersonRepository.Setup(x => x.GetPersonById(It.IsAny<Guid>())).ReturnsAsync(person);
             _mockPersonRepository.Setup(x => x.UpdatePerson(It.IsAny<Person>())).ReturnsAsync(person);
             _mockPersonRepository.Setup(x => x.GetPersonWithCountryById(It.IsAny<Guid>())).ReturnsAsync(person);
-            var personResFromUpdate = await _personsService.UpdatePerson(personUpdateReq);
+            var personResFromUpdate = await _personUpdaterService.UpdatePerson(personUpdateReq);
             // _testOutputHelper.WriteLine("after Update");
             // _testOutputHelper.WriteLine(personResActual.ToString());
             // Assert.True(personResActual.Name == personResFromUpdate.Name && personResActual.Email == personResFromUpdate.Email);
@@ -437,7 +458,7 @@ namespace XUNIT_CRUD
         [Fact]
         public async Task DeletePerson_nullId_ToBeFalse()
         {
-            var res = await _personsService.DeletePerson(null);
+            var res = await _personDeleterService.DeletePerson(null);
             Assert.False(res);
         }
         [Fact]
@@ -446,7 +467,7 @@ namespace XUNIT_CRUD
 
             var id = Guid.NewGuid();
             _mockPersonRepository.Setup(x => x.GetPersonById(It.IsAny<Guid>())).ReturnsAsync(null as Person);
-            var res = await _personsService.DeletePerson(id);
+            var res = await _personDeleterService.DeletePerson(id);
             Assert.False(res);
         }
         [Fact]
@@ -458,7 +479,7 @@ namespace XUNIT_CRUD
             var person = _fixture.Build<Person>().With(x => x.Email, "abc@gmail.com").With(x => x.Country, null as Country).Create();
             _mockPersonRepository.Setup(x => x.DeletePerson(It.IsAny<Person>())).ReturnsAsync(true);
             _mockPersonRepository.Setup(x => x.GetPersonById(It.IsAny<Guid>())).ReturnsAsync(person);
-            var res = await _personsService.DeletePerson(person.Id);
+            var res = await _personDeleterService.DeletePerson(person.Id);
             Assert.True(res);
             // var TryGettingDeletedPerson = await _personsService.GetPersonByID(person.Id);
             // Assert.Null(TryGettingDeletedPerson);

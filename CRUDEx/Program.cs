@@ -11,6 +11,7 @@ using ServiceContracts;
 using Services;
 using System.Runtime.CompilerServices;
 using System.Text.Json.Serialization;
+using Middlewwares.Middleware;
 
 // [assembly: InternalsVisibleTo(@"XUNIT_CRUD")]
 namespace CRUDEx
@@ -23,14 +24,14 @@ namespace CRUDEx
             builder.Services.ConfigureServices(builder);
             var app = builder.Build();
             app.UseSerilogRequestLogging();
-            // app.Logger.LogDebug("this is for debug");
-            // app.Logger.LogWarning("this is for waLogWarning");
-            // app.Logger.LogInformation("this is for iLogInformation");
-            // app.Logger.LogError("this is for eLogError");
-            // app.Logger.LogCritical("this is for cLogCritical");
             if (app.Environment.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandlingMiddleware();
             }
             app.UseHttpLogging();
             app.UseStaticFiles();
